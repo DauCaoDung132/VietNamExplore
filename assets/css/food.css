@@ -1,1 +1,382 @@
+.food-page {
+  --ink: #1e2830;
+  --muted: #46545d;
+  --nav: #23313b;
+  --green: #28683c;
+  --green-hover: #1f5230;
+  --line: #d5dde0;
+  --surface: #fff;
+  margin: 0;
+  color: var(--ink);
+  background: #f0f3f3;
+  font: 1rem/1.6 "Segoe UI", Arial, sans-serif;
+}
 
+.food-page *,
+.food-page *::before,
+.food-page *::after {
+  box-sizing: border-box;
+}
+
+.food-page [hidden] {
+  display: none !important;
+}
+
+.food-page a {
+  color: inherit;
+}
+
+.food-page :focus-visible,
+.region-option input:focus-visible + span {
+  outline: 3px solid #5a9d6f;
+  outline-offset: 3px;
+}
+
+.food-page h1,
+.food-page h2,
+.food-page h3 {
+  margin: 0;
+  font-family: inherit;
+  line-height: 1.18;
+  letter-spacing: normal;
+}
+
+.food-page p {
+  margin: 0;
+}
+
+.page-width {
+  width: min(100% - 3rem, 74rem);
+  margin-inline: auto;
+}
+
+.visually-hidden,
+.skip-link:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  position: absolute;
+  z-index: 2;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.site-header {
+  color: #fff;
+  background: var(--nav);
+}
+
+.header-inner {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+}
+
+.wordmark {
+  width: fit-content;
+  font-size: 1.28rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.25rem;
+}
+
+.site-nav a {
+  padding-block: 0.5rem;
+  border-bottom: 2px solid transparent;
+  color: #eef3f5;
+  font-size: 0.94rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-bottom-color: #8acc98;
+  color: #fff;
+}
+
+.site-nav a[aria-current="page"] {
+  font-weight: 700;
+}
+
+.food-intro {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: clamp(23rem, 36vw, 31rem);
+  align-items: end;
+  overflow: hidden;
+  color: #fff;
+  background: #344c50;
+}
+
+.hero-image,
+.food-intro::after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 56%;
+}
+
+.food-intro::after {
+  z-index: -1;
+  background: linear-gradient(0deg, rgb(14 25 31 / 88%), rgb(14 25 31 / 46%) 55%, rgb(14 25 31 / 12%));
+  content: "";
+}
+
+.food-intro-copy {
+  padding-block: 4rem 3rem;
+}
+
+.food-intro h1 {
+  max-width: 23ch;
+  font-size: clamp(2.15rem, 4.3vw, 3.85rem);
+  font-weight: 750;
+}
+
+.food-intro-copy p {
+  max-width: 46ch;
+  margin-block: 0.7rem 1.15rem;
+  font-size: clamp(1rem, 1.6vw, 1.13rem);
+}
+
+a.intro-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+  background: var(--green);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a.intro-link:hover {
+  background: var(--green-hover);
+}
+
+.food-directory {
+  padding-block: 2.15rem clamp(3rem, 6vw, 5.5rem);
+}
+
+.directory-head,
+.directory-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem 1.25rem;
+}
+
+.directory-head {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.directory-head h2 {
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 700;
+}
+
+.region-filter {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 0;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.region-option span {
+  display: block;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.2rem;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.region-option span:hover {
+  border-color: var(--green);
+}
+
+.region-option input:checked + span {
+  border-color: var(--green);
+  color: #fff;
+  background: var(--green);
+}
+
+.directory-note {
+  align-items: flex-end;
+  margin-block: 0.7rem 1.35rem;
+  color: var(--muted);
+}
+
+#region-note {
+  max-width: 66ch;
+}
+
+#dish-count {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+}
+
+.dish-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dish-item {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  background: var(--surface);
+}
+
+.dish-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  color: var(--ink);
+  background: #dce6df;
+}
+
+.dish-copy {
+  padding: 0.9rem 1rem 1.15rem;
+}
+
+.dish-item h3 {
+  margin-block: 0.3rem 0.45rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.dish-copy p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.dish-copy .dish-place {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  color: var(--green);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.dish-place span {
+  padding-left: 0.6rem;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.site-footer {
+  color: #fff;
+  background: var(--nav);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 31rem);
+  align-items: start;
+  gap: 0.65rem 1.5rem;
+  padding-block: 1.25rem;
+}
+
+.photo-credits {
+  color: #eef3f5;
+  font-size: 0.9rem;
+}
+
+.photo-credits summary {
+  width: fit-content;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.photo-credits ul {
+  padding-left: 1.1rem;
+}
+
+@media (max-width: 50rem) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 0.65rem 0.4rem;
+  }
+
+  .dish-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 35rem) {
+  .page-width {
+    width: calc(100% - 2rem);
+  }
+
+  .site-nav {
+    column-gap: 0.85rem;
+  }
+
+  .food-intro {
+    min-height: 21rem;
+  }
+
+  .food-intro-copy {
+    padding-block: 3.5rem 1.75rem;
+  }
+
+  .region-option span {
+    padding-inline: 0.52rem;
+  }
+
+  .directory-note {
+    display: block;
+  }
+
+  #dish-count {
+    margin-top: 0.35rem;
+  }
+
+  .dish-list,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-credits summary {
+    margin-left: 0;
+  }
+}
