@@ -1,6 +1,6 @@
 # Báo cáo dự án VietNamExplore — W07
 
-> **Trạng thái bản nháp:** Danh sách thành viên đã được cập nhật theo thông tin nhóm cung cấp. Lịch sử Git, PR, tag, triển khai Pages và ảnh minh chứng vẫn cần xác nhận bằng bằng chứng thật trước khi nộp.
+> **Trạng thái cập nhật 25/11/2026:** Task 6 đã có code và tài liệu trên branch `feature/introduction` (commit `cb39ba9`). Chưa phải bản phát hành: chưa có PR của branch này, tag `v1.0.0` chưa tồn tại, GitHub Pages trả HTTP 404 và các PR nội dung của nhóm vẫn đang mở.
 
 ## Project Overview
 
@@ -9,8 +9,9 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 | Thông tin | Giá trị |
 |---|---|
 | Repository | [DauCaoDung132/VietNamExplore](https://github.com/DauCaoDung132/VietNamExplore) |
-| GitHub Pages | Chưa xác nhận đã bật; URL dự kiến: `https://daucaodung132.github.io/VietNamExplore/` |
+| GitHub Pages | URL dự kiến `https://daucaodung132.github.io/VietNamExplore/` trả HTTP 404 khi kiểm tra ngày 25/11/2026 |
 | Báo cáo | `docs/REPORT.md` |
+| Slide release/demo | `docs/RELEASE_DEMO.html` |
 | Ảnh minh chứng | `docs/images/` |
 
 ## Team Contributions
@@ -22,7 +23,7 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 | 3 | 25127366 | Nguyễn Diệp Vĩnh Khang | [@KhangNguyendotcpp](https://github.com/KhangNguyendotcpp) | Ẩm thực, Pull Request/review, conflict |
 | 4 | 25127020 | Nguyễn Phi Bảo Bình | [@npbbinh2511-arch](https://github.com/npbbinh2511-arch) | Văn hóa, phối hợp Task 5 |
 | 5 | 25127427 | Trương Cẩm Tú Nga | [@tunnnga2605-png](https://github.com/tunnnga2605-png) | Kinh nghiệm, revert và kiểm thử liên kết |
-| 6 | 25127062 | Nguyễn Minh Huy | [@nmhuy1211](https://github.com/nmhuy1211) | Trang About và tài liệu Task 6 đã được chuẩn bị trong workspace; bằng chứng Git/release còn cần bổ sung |
+| 6 | 25127062 | Nguyễn Minh Huy | [@nmhuy1211](https://github.com/nmhuy1211) | Trang About, báo cáo và slide Task 6 trên branch `feature/introduction`; release còn chờ review/merge và deploy |
 
 ## Implementation and Evidence
 
@@ -48,29 +49,35 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 
 ### Task 6 — Release và GitHub Pages (Thành viên 6)
 
-#### Phần đã chuẩn bị trong workspace
+#### Đã hoàn thành trên branch `feature/introduction`
 
-- Hoàn thiện `about.html`, `assets/css/about.css` và `assets/js/about.js`: sáu hồ sơ thành viên theo thông tin nhóm cung cấp, tuyến hành trình tương tác, cửa sổ chi tiết, điều hướng bàn phím, giới thiệu dự án/công nghệ và bố cục responsive.
-- Cập nhật README và CHANGELOG theo cấu trúc `assets/` đang dùng trong repository.
-- Thêm `tools/check_links.py` để kiểm tra liên kết cục bộ hoặc các trang/tài nguyên tại URL công khai.
-- Thêm thông tin họ tên/tài khoản GitHub của sáu thành viên; URL Pages/tag để trống cho tới khi nhóm xác nhận đã phát hành.
+- `about.html`, `assets/css/about.css`, `assets/js/about.js`: sáu hồ sơ thành viên, giới thiệu dự án/công nghệ, hộp thoại chi tiết, điều hướng giữa thành viên, điều khiển bàn phím và bố cục responsive.
+- Cập nhật README/CHANGELOG theo cấu trúc repository; thêm `tools/check_links.py`.
+- Viết báo cáo này và tạo slide trình bày/demo tại `docs/RELEASE_DEMO.html`.
+- Đã kiểm tra tương tác mở chi tiết một thành viên trên trình duyệt local.
 
-#### Việc chưa thể xác nhận
+#### Trạng thái GitHub và các điểm chặn đã xác minh
 
-- Workspace hiện không có lịch sử Git/remote khả dụng; chưa tạo branch, commit, Pull Request, tag hoặc thay đổi cài đặt GitHub Pages.
-- Các file `index.html`, `destinations.html`, `food.html`, `culture.html` và `tips.html` hiện là file rỗng trong workspace này. Vì vậy chưa thể xác nhận điều hướng toàn site hoặc chạy kiểm tra liên kết toàn dự án đạt.
-- Chưa có ảnh chụp giao diện, tag/release hoặc deployment trong `docs/images/`.
-- Chưa ghi ngày phát hành và chưa đưa các mục conflict/revert vào CHANGELOG, do chưa đối chiếu được lịch sử Git thực tế.
+- Branch `feature/introduction` đã được push; commit hiện tại là `cb39ba9` (`Sync completed project`). Chưa thấy PR cho branch này.
+- PR nhóm đang mở: [#1](https://github.com/DauCaoDung132/VietNamExplore/pull/1), [#3](https://github.com/DauCaoDung132/VietNamExplore/pull/3), [#4](https://github.com/DauCaoDung132/VietNamExplore/pull/4) và [#5](https://github.com/DauCaoDung132/VietNamExplore/pull/5). Cần review/merge theo quy trình nhóm trước khi phát hành.
+- Trên `main`, sáu file trang HTML hiện vẫn là placeholder rỗng 1 byte; branch home/culture/food/tips có PR đang chờ. Trang destination chưa có branch/PR tương ứng trong danh sách hiện tại.
+- Không có tag local hoặc remote; `v1.0.0` chưa được tạo.
+- URL Pages dự kiến trả HTTP 404; chưa có deployment công khai hoạt động.
+- `docs/images/` hiện chỉ có `.gitkeep`; chưa có ảnh minh chứng. Chưa có kết quả chạy link checker.
 
-#### Bằng chứng cần bổ sung sau khi thực hiện trên GitHub
+#### Việc còn lại để đủ điều kiện phát hành
 
-| Nội dung | Bằng chứng |
+| Việc cần làm | Trạng thái/bằng chứng cần có |
 |---|---|
-| PR trang About/tài liệu | Cần bổ sung URL PR |
-| Tag `v1.0.0` và commit được tag | Cần bổ sung URL tag và ảnh `git show v1.0.0` |
-| Cấu hình Pages và deployment thành công | Cần bổ sung ảnh từ Settings → Pages và Actions |
-| Kiểm tra liên kết công khai | Cần bổ sung kết quả `python tools/check_links.py --base <URL Pages>` |
-| About trên desktop/điện thoại, dialog mở | Cần bổ sung ảnh vào `docs/images/` |
+| Review/merge các PR và hoàn thiện trang destination | PR đã merge; toàn bộ trang có nội dung |
+| Mở PR cho `feature/introduction` và merge vào `main` | URL PR và trạng thái merged |
+| Kiểm tra website local | `python tools/check_links.py` trả mã thoát 0 |
+| Tạo/push tag `v1.0.0` sau khi merge | Tag trỏ đúng commit release trên `main` |
+| Bật GitHub Pages và kiểm tra URL | Deployment thành công; trang công khai trả HTTP 200 |
+| Kiểm tra liên kết công khai | `python tools/check_links.py --base https://daucaodung132.github.io/VietNamExplore/` trả mã thoát 0 |
+| Lưu ảnh About desktop/mobile và dialog | Ảnh thật trong `docs/images/` |
+
+Không ghi release là hoàn tất cho tới khi các mục trên có bằng chứng xác minh.
 
 ### Task 7 — Báo cáo Markdown
 
@@ -88,16 +95,24 @@ Chưa thể xác nhận các chỉ tiêu nghiệm thu khi thiếu trạng thái 
 | PR đã merge / có review | Tối thiểu 4 / 3 | Chưa xác minh | Danh sách PR và review |
 | Cả 6 người tham gia PR | 6/6 | Chưa xác minh | PR theo thành viên |
 | Conflict / revert | Có, đủ người tham gia | Chưa xác minh | Commit và ảnh |
-| Tag `v1.0.0` / GitHub Pages | Đã push / hoạt động | Chưa xác minh | Tag và URL Pages |
+| Tag `v1.0.0` / GitHub Pages | Đã push / hoạt động | Chưa hoàn tất; chưa có tag, URL trả 404 | Tag và URL Pages sau deployment |
 | Commit liên quan báo cáo | Tối thiểu 3 | Chưa xác minh | Lịch sử commit |
 
-## Kiểm thử
+## Kiểm thử và xác minh
 
-Sau khi các trang còn lại được hoàn thiện, chạy:
+| Kiểm tra | Kết quả |
+|---|---|
+| `python tools/check_links.py` | **FAIL (10 errors):** năm trang `index.html`, `destinations.html`, `food.html`, `culture.html`, `tips.html` rỗng; các trang đó cũng thiếu liên kết điều hướng tới năm trang còn lại. |
+| `git diff --check` | PASS; không phát hiện lỗi whitespace trong thay đổi tài liệu hiện tại. |
+| About trên trình duyệt ở viewport 390×844 | PASS: hiển thị 6 thẻ, mở được dialog thành viên, không tràn ngang. |
+| Slide `docs/RELEASE_DEMO.html` | PASS: 6 slide, điều khiển nút và phím `End`/`PageUp` chuyển đúng. |
+| `https://daucaodung132.github.io/VietNamExplore/` | **HTTP 404** khi kiểm tra; chưa có website công khai để chạy remote link checker. |
+
+Sau khi các PR được hợp nhất và toàn bộ trang có nội dung, chạy lại:
 
 ```bash
 python tools/check_links.py
 python tools/check_links.py --base https://daucaodung132.github.io/VietNamExplore/
 ```
 
-Chỉ ghi “đạt” khi lệnh trả mã thoát 0, các trang hoạt động và ảnh/bằng chứng tương ứng đã được lưu.
+Chỉ ghi “đạt” khi cả hai lệnh trả mã thoát 0, URL công khai hoạt động và ảnh/bằng chứng tương ứng đã được lưu.

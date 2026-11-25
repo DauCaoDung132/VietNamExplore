@@ -3,10 +3,11 @@
 Website du lịch tĩnh giới thiệu địa điểm, ẩm thực, văn hóa và kinh nghiệm đi lại ở Việt Nam. Đây là sản phẩm thực hành **W07 – Version Control with Git & GitHub** của nhóm 6 thành viên.
 
 - **Repository:** [DauCaoDung132/VietNamExplore](https://github.com/DauCaoDung132/VietNamExplore)
-- **GitHub Pages:** chưa xác nhận đã bật; URL dự kiến là `https://daucaodung132.github.io/VietNamExplore/`
+- **GitHub Pages:** URL dự kiến `https://daucaodung132.github.io/VietNamExplore/` hiện trả HTTP 404 (kiểm tra 25/11/2026); chưa phát hành.
 - **Báo cáo:** [docs/REPORT.md](docs/REPORT.md)
 - **Nhật ký thay đổi:** [CHANGELOG.md](CHANGELOG.md)
-- **Phiên bản:** đang chuẩn bị `v1.0.0`; chưa xác nhận tag/release trên GitHub.
+- **Slide release/demo:** [docs/RELEASE_DEMO.html](docs/RELEASE_DEMO.html)
+- **Phiên bản:** chuẩn bị `v1.0.0`; chưa có tag/release trên GitHub.
 
 ## Các trang
 
@@ -61,7 +62,9 @@ Lệnh kiểm tra toàn site chỉ đạt khi cả sáu trang, tài liệu và l
 
 ## Phát hành và báo cáo
 
-Chỉ cập nhật ngày phát hành, link tag, Pages và bằng chứng trong README/CHANGELOG/báo cáo sau khi xác minh trên GitHub. Báo cáo Markdown chính thức nằm tại `docs/REPORT.md`; ảnh minh chứng lưu trong `docs/images/`.
+Các thay đổi Task 6 đang ở branch `feature/introduction`; chưa hợp nhất vào `main`. Các PR của nhóm #1, #3, #4 và #5 vẫn đang mở; tag `v1.0.0` chưa tồn tại và URL Pages hiện trả HTTP 404. Chỉ cập nhật trạng thái “đã phát hành” sau khi các PR được review/merge, website được triển khai và URL công khai được xác minh.
+
+Báo cáo Markdown chính thức nằm tại `docs/REPORT.md`; slide demo nằm tại `docs/RELEASE_DEMO.html`; ảnh minh chứng lưu trong `docs/images/`.
 
 ### Cấu trúc thư mục
 
@@ -76,6 +79,7 @@ VietNamExplore/
 │   ├── DESIGN_GUIDE.md
 │   ├── GIT_WORKFLOW.md
 │   ├── REPORT.md
+│   ├── RELEASE_DEMO.html
 │   └── images/   # ảnh minh chứng
 ├── tools/check_links.py
 ├── README.md
