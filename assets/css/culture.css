@@ -62,6 +62,14 @@
   box-shadow: 0 8px 20px rgba(30, 40, 48, 0.06);
 }
 
+.culture-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  border: 1px solid var(--line);
+}
+
 .culture-card-header {
   display: grid;
   gap: 0.55rem;
