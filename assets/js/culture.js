@@ -45,4 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
       syncToggleAllButton();
     });
   }
+
+  syncToggleAllButton();
 });

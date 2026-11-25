@@ -63,8 +63,9 @@
 }
 
 .culture-image {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 0.25rem;
   border: 1px solid var(--line);
@@ -91,9 +92,15 @@
   font-size: 0.96rem;
 }
 
+#toggle-all-btn {
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .culture-toggle {
   width: fit-content;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .culture-detail {
