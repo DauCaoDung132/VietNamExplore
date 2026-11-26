@@ -269,6 +269,15 @@
   text-decoration: none;
   overflow-wrap: anywhere;
 }
+.about-page .dialog-files code {
+  padding: .2rem .55rem;
+  border: 1px solid var(--about-line);
+  border-radius: .2rem;
+  color: var(--ink);
+  background: #efede5;
+  font-size: .88rem;
+  overflow-wrap: anywhere;
+}
 .about-page .dialog-files a:hover { border-color: var(--green); color: var(--green); }
 .about-page .dialog-extra { color: var(--muted); font-size: .92rem; }
 .about-page .dialog-footer { display: flex; justify-content: space-between; gap: .75rem; padding: .85rem 1.15rem 1rem; border-top: 1px solid var(--about-line); }

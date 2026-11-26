@@ -238,7 +238,10 @@
 
     var files = element('div', { class: 'dialog-files' });
     member.files.forEach(function (file) {
-      files.appendChild(element('a', { href: file, text: file }));
+      var fileElement = /\.html$/i.test(file)
+        ? element('a', { href: file, text: file })
+        : element('code', { text: file });
+      files.appendChild(fileElement);
     });
     body.appendChild(element('section', { class: 'dialog-section' }, [
       element('h3', { text: 'File phụ trách' }),
@@ -261,8 +264,16 @@
       ]));
     }
 
-    document.getElementById('dialog-prev').disabled = index === 0;
-    document.getElementById('dialog-next').disabled = index === MEMBERS.length - 1;
+    var previousButton = document.getElementById('dialog-prev');
+    var nextButton = document.getElementById('dialog-next');
+    var previousDisabled = index === 0;
+    var nextDisabled = index === MEMBERS.length - 1;
+    if ((document.activeElement === previousButton && previousDisabled) ||
+        (document.activeElement === nextButton && nextDisabled)) {
+      document.getElementById('dialog-close').focus();
+    }
+    previousButton.disabled = previousDisabled;
+    nextButton.disabled = nextDisabled;
     updateMemberHash(index);
   }
 
