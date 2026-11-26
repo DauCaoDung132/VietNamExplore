@@ -12,6 +12,8 @@ const slideIntervalMs = 5000;
 
 let currentIndex = 0;
 let autoSlideTimer = null;
+let isHovered = false;
+let hasFocusWithin = false;
 
 function showSlide(targetIndex) {
   currentIndex = (targetIndex + slides.length) % slides.length;
@@ -39,10 +41,12 @@ function stopAutoSlide() {
   }
 }
 
-function startAutoSlide() {
+function syncAutoSlide() {
+  const shouldPause = isHovered || hasFocusWithin;
+  slideshow.classList.toggle("is-paused", shouldPause);
   stopAutoSlide();
 
-  if (reducedMotion.matches || slides.length <= 1) {
+  if (shouldPause || reducedMotion.matches || slides.length <= 1) {
     return;
   }
 
@@ -53,42 +57,46 @@ function startAutoSlide() {
 
 prevButton.addEventListener("click", () => {
   showSlide(currentIndex - 1);
-  startAutoSlide();
+  syncAutoSlide();
 });
 
 nextButton.addEventListener("click", () => {
   showSlide(currentIndex + 1);
-  startAutoSlide();
+  syncAutoSlide();
 });
 
 for (const dot of dots) {
   dot.addEventListener("click", () => {
     showSlide(Number(dot.dataset.index));
-    startAutoSlide();
+    syncAutoSlide();
   });
 }
 
 slideshow.addEventListener("mouseenter", () => {
-  slideshow.classList.add("is-paused");
-  stopAutoSlide();
+  isHovered = true;
+  syncAutoSlide();
 });
 
 slideshow.addEventListener("mouseleave", () => {
-  slideshow.classList.remove("is-paused");
-  startAutoSlide();
+  isHovered = false;
+  syncAutoSlide();
 });
 
 slideshow.addEventListener("focusin", () => {
-  slideshow.classList.add("is-paused");
-  stopAutoSlide();
+  hasFocusWithin = true;
+  syncAutoSlide();
 });
 
 slideshow.addEventListener("focusout", (event) => {
-  if (!slideshow.contains(event.relatedTarget)) {
-    slideshow.classList.remove("is-paused");
-    startAutoSlide();
-  }
+  hasFocusWithin = Boolean(
+    event.relatedTarget && slideshow.contains(event.relatedTarget)
+  );
+  syncAutoSlide();
 });
 
+if (typeof reducedMotion.addEventListener === "function") {
+  reducedMotion.addEventListener("change", syncAutoSlide);
+}
+
 showSlide(0);
-startAutoSlide();
+syncAutoSlide();
