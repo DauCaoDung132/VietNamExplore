@@ -1,1 +1,150 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sáu món ăn quen thuộc của ba miền Việt Nam và cách thưởng thức từng món.">
+  <title>Ẩm thực Việt Nam | VietNamExplore</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/food.css">
+  <script src="assets/js/food.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#noi-dung">Đến nội dung chính</a>
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="destinations.html">Địa điểm</a>
+        <a href="food.html" aria-current="page">Ẩm thực</a>
+        <a href="culture.html">Văn hóa</a>
+        <a href="tips.html">Kinh nghiệm</a>
+        <a href="about.html">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="noi-dung">
+    <section class="food-intro" aria-labelledby="food-title">
+      <img class="hero-image" src="assets/images/food/cho-noi-cai-rang.jpg" width="4032" height="3024" alt="" fetchpriority="high">
+      <div class="page-width food-intro-copy">
+        <h1 id="food-title">Khám phá ẩm thực Việt Nam</h1>
+        <p>Từ quán phở ở Hà Nội đến những chợ nổi miền Tây, mỗi chuyến đi có một món đáng nhớ.</p>
+        <a class="btn-primary" href="#mon-an">Xem món ăn</a>
+      </div>
+    </section>
+
+    <section class="page-width food-directory" id="mon-an" aria-labelledby="dishes-title">
+      <div class="directory-head">
+        <h2 id="dishes-title">Món ngon ba miền</h2>
+        <fieldset class="region-filter" hidden>
+          <legend class="visually-hidden">Lọc món ăn theo miền</legend>
+          <label class="region-option">
+            <input class="visually-hidden" type="radio" name="region" value="all" checked>
+            <span>Tất cả</span>
+          </label>
+          <label class="region-option">
+            <input class="visually-hidden" type="radio" name="region" value="north">
+            <span>Miền Bắc</span>
+          </label>
+          <label class="region-option">
+            <input class="visually-hidden" type="radio" name="region" value="central">
+            <span>Miền Trung</span>
+          </label>
+          <label class="region-option">
+            <input class="visually-hidden" type="radio" name="region" value="south">
+            <span>Miền Nam</span>
+          </label>
+        </fieldset>
+      </div>
+      <div class="directory-note">
+        <p id="region-note">Hà Nội có phở nước và bún chả chấm mắm. Đến Huế và Quảng Nam, thử hai kiểu nước dùng khác nhau. Xuống phía Nam, gọi cơm sườn nướng hoặc cuốn bánh xèo với rau.</p>
+        <p id="dish-count" role="status">6 món</p>
+      </div>
+
+      <ul class="dish-list">
+        <li class="dish-item" data-region="north">
+          <article>
+            <img src="assets/images/food/pho-bo.jpg" width="960" height="640" alt="Tô phở bò với hành, chanh và ớt ăn kèm" loading="lazy">
+            <div class="dish-copy">
+              <p class="dish-place">Miền Bắc <span>Hà Nội</span></p>
+              <h3>Phở bò</h3>
+              <p>Bánh phở mềm, thịt bò thái lát và nước dùng ninh từ xương. Nếm nước trước, rồi thêm chanh hoặc giấm tỏi nếu thích vị chua.</p>
+            </div>
+          </article>
+        </li>
+        <li class="dish-item" data-region="north">
+          <article>
+            <img src="assets/images/food/bun-cha.jpg" width="960" height="640" alt="Bún, rau sống và chả nướng trong bát nước mắm" loading="lazy">
+            <div class="dish-copy">
+              <p class="dish-place">Miền Bắc <span>Hà Nội</span></p>
+              <h3>Bún chả</h3>
+              <p>Thịt nướng được dọn trong bát nước mắm chua ngọt có đồ chua. Gắp từng đũa bún và rau thơm, chấm vào bát mắm rồi ăn với chả.</p>
+            </div>
+          </article>
+        </li>
+        <li class="dish-item" data-region="central">
+          <article>
+            <img src="assets/images/food/bun-bo-hue.jpg" width="960" height="1280" alt="Tô bún bò Huế ở chợ Đông Ba" loading="lazy">
+            <div class="dish-copy">
+              <p class="dish-place">Miền Trung <span>Huế</span></p>
+              <h3>Bún bò Huế</h3>
+              <p>Sợi bún to, nước dùng thơm sả và đậm vị mắm ruốc. Tùy quán, bạn có thể gọi thêm giò heo hoặc chả.</p>
+            </div>
+          </article>
+        </li>
+        <li class="dish-item" data-region="central">
+          <article>
+            <img src="assets/images/food/mi-quang.jpg" width="960" height="720" alt="Tô mì Quảng sợi to với tôm, thịt và rau" loading="lazy">
+            <div class="dish-copy">
+              <p class="dish-place">Miền Trung <span>Quảng Nam</span></p>
+              <h3>Mì Quảng</h3>
+              <p>Sợi mì bản rộng ăn với tôm, thịt và một ít nước chan. Bẻ bánh tráng nướng vào tô để có thêm độ giòn.</p>
+            </div>
+          </article>
+        </li>
+        <li class="dish-item" data-region="south">
+          <article>
+            <img src="assets/images/food/com-tam.jpg" width="1024" height="768" alt="Đĩa cơm tấm với sườn nướng, bì, chả và trứng" loading="lazy">
+            <div class="dish-copy">
+              <p class="dish-place">Miền Nam <span>Sài Gòn</span></p>
+              <h3>Cơm tấm sườn</h3>
+              <p>Cơm nấu từ gạo tấm, dọn cùng sườn nướng, đồ chua và nước mắm ngọt. Gọi thêm bì, chả hoặc trứng ốp la tùy bụng.</p>
+            </div>
+          </article>
+        </li>
+        <li class="dish-item" data-region="south">
+          <article>
+            <img src="assets/images/food/banh-xeo.jpg" width="960" height="720" alt="Bánh xèo vàng gập đôi ăn cùng rau sống" loading="lazy">
+            <div class="dish-copy">
+              <p class="dish-place">Miền Nam <span>Miền Tây</span></p>
+              <h3>Bánh xèo miền Tây</h3>
+              <p>Vỏ bánh mỏng, rìa giòn, nhân thường có tôm, thịt và giá đỗ. Xé một miếng, cuốn trong lá cải với rau thơm rồi chấm mắm.</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <details class="footer-meta photo-credits">
+        <summary>Nguồn ảnh</summary>
+        <ul>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Cai_Rang_Floating_Market_1.jpg">Chợ nổi Cái Răng, Cần Thơ</a> — Christophe95, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg">Phở bò</a> — Codename5281, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Bun-cha-hanoi.jpg">Bún chả</a> — Valentin Orange, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:B%C3%BAn_b%C3%B2_Hu%E1%BA%BF_-_Ch%E1%BB%A3_%C4%90%C3%B4ng_Ba_%282024%29_-_img_01.jpg">Bún bò Huế</a> — Chainwit, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:M%C3%AC_Qu%E1%BA%A3ng.jpg">Mì Quảng</a> — SauceSupreme, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Com-Tam-2008.jpg">Cơm tấm</a> — <a href="https://www.khamtran.com/">Kham Tran</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:B%C3%A1nh_x%C3%A8o.jpg">Bánh xèo</a> — DuyTran16, phạm vi công cộng</li>
+        </ul>
+        <p>Một số ảnh được cắt khung để vừa bố cục.</p>
+      </details>
+    </div>
+  </footer>
+</body>
+</html>
