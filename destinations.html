@@ -1,1 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Khám phá chín điểm đến và 45 nơi tham quan tại Việt Nam.">
+  <title>Địa điểm du lịch | VietNamExplore</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/destinations.css">
+  <script src="assets/js/destinations.js" defer></script>
+</head>
+<body class="destinations-page">
+  <a class="skip-link" href="#noi-dung">Đến nội dung chính</a>
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="destinations.html" aria-current="page">Địa điểm</a>
+        <a href="food.html">Ẩm thực</a>
+        <a href="culture.html">Văn hóa</a>
+        <a href="tips.html">Kinh nghiệm</a>
+        <a href="about.html">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="noi-dung">
+    <section id="directory-view">
+      <div class="page-width dest-filter" aria-label="Bộ lọc địa điểm">
+        <div id="region-buttons" class="dest-buttons">
+          <button data-region="all" aria-pressed="true">Tất cả</button><button data-region="north" aria-pressed="false">Miền Bắc</button><button data-region="central" aria-pressed="false">Miền Trung</button><button data-region="south" aria-pressed="false">Miền Nam</button>
+        </div>
+        <input id="destination-search" type="search" placeholder="Tìm địa điểm..." aria-label="Tìm địa điểm">
+      </div>
+      <section id="dest-hero" class="dest-hero" aria-label="Trình chiếu địa điểm">
+        <div id="hero-media" class="hero-media"></div>
+        <div class="page-width hero-copy"><span id="hero-region"></span><h1 id="hero-title"></h1><p id="hero-description"></p><button id="hero-open" class="btn-primary">Khám phá ngay</button><a id="hero-source" target="_blank" rel="noopener" class="hero-source">Nguồn ảnh</a></div>
+        <button id="prev-slide" class="slide-arrow prev" aria-label="Ảnh trước">‹</button><button id="next-slide" class="slide-arrow next" aria-label="Ảnh tiếp theo">›</button>
+        <div class="slide-controls"><div id="slide-dots"></div><button id="pause-slide" aria-label="Tạm dừng trình chiếu">Ⅱ</button></div>
+      </section>
+      <section class="page-width dest-list"><h2>Địa điểm du lịch nổi bật</h2><p id="destination-count" role="status"></p><div id="destination-grid" class="dest-grid"></div><p id="no-results" hidden>Không tìm thấy địa điểm phù hợp.</p></section>
+    </section>
+    <section id="detail-view" hidden><div class="page-width detail-nav"><button id="back-button" class="btn-secondary">← Quay lại danh sách</button></div><div id="detail-content"></div></section>
+    <noscript>Vui lòng bật JavaScript để khám phá các địa điểm.</noscript>
+  </main>
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <div class="footer-meta">
+        <p>Đồ án W07 — Version Control with Git &amp; GitHub · Nhóm VietNamExplore</p>
+        <ul class="footer-links">
+          <li><a href="destinations.html">Địa điểm</a></li>
+          <li><a href="food.html">Ẩm thực</a></li>
+          <li><a href="culture.html">Văn hóa</a></li>
+          <li><a href="tips.html">Kinh nghiệm</a></li>
+          <li><a href="about.html">Giới thiệu nhóm</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
