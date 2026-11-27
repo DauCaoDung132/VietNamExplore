@@ -19,7 +19,7 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 |---|---|---|---|
 | **Nguyễn Nhật Thùy Khanh** (`Yuru2812`, 25127373) | Tasks 1, 2, 3, 7 | Home page, shared styles and design guide, project overview. | PRs [#2](https://github.com/DauCaoDung132/VietNamExplore/pull/2), [#3](https://github.com/DauCaoDung132/VietNamExplore/pull/3); add verified commit/review evidence. |
 | **Đậu Cao Dũng** (`DauCaoDung132`, 25127301) | Tasks 1, 2, 3, 4, 7 | Repository setup, destinations page, branches and merge conflict. | Add branch, commit, PR and conflict evidence. |
-| **Nguyễn Diệp Vĩnh Khang** (`KhangNguyendotcpp`, 25127366) | Tasks 1, 2, 3, 4, 7 | Cuisine page, PR review and merge conflict. | PR [#1](https://github.com/DauCaoDung132/VietNamExplore/pull/1); add verified review/conflict evidence. |
+| **Nguyễn Diệp Vĩnh Khang** (`KhangNguyendotcpp`, 25127366) | Tasks 1, 2, 3, 4, 7 | Built and tested the Cuisine page, reviewed Khanh's home-page PR, and documented the report conflict and proposed resolution. | [`feature/food`](https://github.com/DauCaoDung132/VietNamExplore/tree/feature/food), merged [PR #8](https://github.com/DauCaoDung132/VietNamExplore/pull/8), [review on PR #3](https://github.com/DauCaoDung132/VietNamExplore/pull/3#pullrequestreview-6063441754), [conflict evidence](images/tv3-pr3-conflict.png). |
 | **Nguyễn Phi Bảo Bình** (`npbbinh2511-arch`, 25127020) | Tasks 1, 2, 3, 5, 7 | Culture page and coordination on the revert exercise. | PR [#4](https://github.com/DauCaoDung132/VietNamExplore/pull/4); add verified commit/revert evidence. |
 | **Trương Cẩm Tú Nga** (`tunnnga2605-png`, 25127427) | Tasks 1, 2, 3, 5, 7 | Travel tips page, revert and link testing. | PR [#5](https://github.com/DauCaoDung132/VietNamExplore/pull/5); add verified revert/test evidence. |
 | **Nguyễn Minh Huy** (`nmhuy1211`, 25127062) | Tasks 1, 2, 3, 6, 7 | About page, release preparation, and Task 6 report/demo materials. | Branch [`feature/introduction`](https://github.com/DauCaoDung132/VietNamExplore/tree/feature/introduction); open PR [#6](https://github.com/DauCaoDung132/VietNamExplore/pull/6). Add verified review and release evidence when available. |
@@ -36,11 +36,22 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 
 ### Task 3 — Pull Request và review
 
-- Kết quả/bằng chứng: nhóm bổ sung link PR đã merge, người review và nhận xét review cụ thể.
+**Member 3 — Nguyễn Diệp Vĩnh Khang**
+
+- **Cuisine PR.** [PR #8](https://github.com/DauCaoDung132/VietNamExplore/pull/8) replaced closed [PR #1](https://github.com/DauCaoDung132/VietNamExplore/pull/1) and merged `feature/food` into `main` at [`64504c5`](https://github.com/DauCaoDung132/VietNamExplore/commit/64504c590447c35781cbbff25d5a3dbd98e023fa). The three original implementation commits cover [HTML and content](https://github.com/DauCaoDung132/VietNamExplore/commit/0dec74f4350361953ba46d4710a4e68ccaf6fb42), [responsive CSS](https://github.com/DauCaoDung132/VietNamExplore/commit/0fcc56a7398ed4eec35b7528f4be79e5167fce0e), and the [JavaScript region filter](https://github.com/DauCaoDung132/VietNamExplore/commit/521d862578287fbd16b7d42af77e028d574078e5).
+- **Review before merge.** Khang requested changes on [Khanh's PR #3](https://github.com/DauCaoDung132/VietNamExplore/pull/3#pullrequestreview-6063441754) after finding that autoplay restarted while keyboard focus was still inside the slideshow. Khanh fixed the separate hover and focus states in [`723a0e9`](https://github.com/DauCaoDung132/VietNamExplore/commit/723a0e9c633f74bbcfcf73a16111f8c59957a83c). Khang's [follow-up review](https://github.com/DauCaoDung132/VietNamExplore/pull/3#pullrequestreview-6083871232) records the passing browser retest and the remaining report conflict.
+- **Team snapshot, 27 November 2026.** All six members had opened a PR: [Home #3](https://github.com/DauCaoDung132/VietNamExplore/pull/3), [Destinations #9](https://github.com/DauCaoDung132/VietNamExplore/pull/9), [Cuisine #8](https://github.com/DauCaoDung132/VietNamExplore/pull/8), [Culture #4](https://github.com/DauCaoDung132/VietNamExplore/pull/4), [Travel Tips #5](https://github.com/DauCaoDung132/VietNamExplore/pull/5), and [About #6](https://github.com/DauCaoDung132/VietNamExplore/pull/6). PRs [#2](https://github.com/DauCaoDung132/VietNamExplore/pull/2), [#6](https://github.com/DauCaoDung132/VietNamExplore/pull/6), and [#8](https://github.com/DauCaoDung132/VietNamExplore/pull/8) had merged into `main`. [PR #7](https://github.com/DauCaoDung132/VietNamExplore/pull/7) synced `main` into `feature/food`. The team review target still needs further evidence.
+- **Slide material.** [PR and review evidence](MEMBER_3_REVIEW.html).
 
 ### Task 4 — Merge conflict
 
-- Kết quả/bằng chứng: nhóm bổ sung link/commit conflict, người tham gia và ảnh giải quyết conflict trong `docs/images/`.
+- **Existing conflict.** Khang reviewed [Khanh's PR #3](https://github.com/DauCaoDung132/VietNamExplore/pull/3). Khanh's report on [`feature/home` at `723a0e9`](https://github.com/DauCaoDung132/VietNamExplore/blob/723a0e9c633f74bbcfcf73a16111f8c59957a83c/docs/REPORT.md) conflicts with the report on [`main` at `d989449`](https://github.com/DauCaoDung132/VietNamExplore/blob/d989449d79d18005be51880e67ead07622e17685/docs/REPORT.md), which includes Huy's Task 6 contribution from [PR #6](https://github.com/DauCaoDung132/VietNamExplore/pull/6).
+- **Evidence.** A local three-way merge check against the two commits reported one conflict, in `docs/REPORT.md`. The image shows the Git output and shortened excerpts from both sides.
+
+  ![Git output and conflict markers for docs/REPORT.md in PR #3](images/tv3-pr3-conflict.png)
+
+- **Review recommendation.** Use Khanh's `feature/home` version (Current Change when resolving from that branch) as the report structure. Restore Huy's Task 6 contribution from `main` and integrate the verified Task 3–4 evidence. Remove the conflict markers and check the report links before committing the resolution.
+- **Status as of 27 November 2026.** PR #3 remained open with a merge conflict. The review and reproduction evidence are available. The resolution commit and post-resolution evidence are pending on PR #3.
 
 ### Task 5 — Git revert
 
@@ -84,6 +95,10 @@ Chưa thể xác nhận các chỉ tiêu nghiệm thu khi thiếu trạng thái 
 | Commit liên quan báo cáo | Tối thiểu 3 | Chưa xác minh | Lịch sử commit |
 
 ## Kiểm thử
+
+**Cuisine page (Member 3).** Chrome checks at 1440, 768 and 390 px verified the three-, two- and one-column layouts, seven local photos, and six navigation links pointing to repository files. Each region showed two expected dishes and updated the description and count. The “Tất cả” option restored all six dishes. Arrow-key selection worked and all six dishes remained readable with JavaScript disabled. [Desktop evidence](images/tv3-food-desktop.jpg) · [Mobile evidence](images/tv3-food-mobile.jpg).
+
+On `main` at `d989449`, the full-site link checker still reported eight errors because the Home, Destinations, Culture and Travel Tips pages were empty and had no navigation. The Cuisine and About pages had no reported errors.
 
 Sau khi các trang còn lại được hoàn thiện, chạy:
 

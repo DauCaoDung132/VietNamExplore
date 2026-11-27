@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VietNamExplore · Pull Request và code review</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #e8eded;
+      color: #1e2830;
+      font: 1rem/1.55 "Segoe UI", Arial, sans-serif;
+    }
+    main {
+      width: min(76rem, calc(100% - 2rem));
+      margin: clamp(1rem, 5vw, 4rem) auto;
+      padding: clamp(1.25rem, 4vw, 3rem);
+      border: 1px solid #d5dde0;
+      border-radius: .5rem;
+      background: #f7f4eb;
+    }
+    h1, h2, p, figure { margin: 0; }
+    h1 { font-size: clamp(2rem, 5vw, 3.35rem); line-height: 1.1; }
+    h2 { margin-bottom: .35rem; font-size: 1.24rem; }
+    header p { margin-top: .7rem; color: #46545d; }
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      align-items: start;
+      gap: clamp(1.25rem, 4vw, 3rem);
+      margin-top: 1.5rem;
+    }
+    section + section { margin-top: 1.2rem; }
+    a { color: #28683c; text-underline-offset: .15em; }
+    a:focus-visible { outline: 3px solid #28683c; outline-offset: 3px; }
+    img { display: block; width: 100%; height: auto; }
+    figcaption { margin-top: .5rem; color: #46545d; font-size: .92rem; }
+    @media (max-width: 50rem) {
+      .content { grid-template-columns: 1fr; }
+    }
+    @media print {
+      @page { size: A4 landscape; margin: 9mm; }
+      body { background: white; }
+      main { width: 100%; margin: 0; padding: 1rem; break-inside: avoid; }
+      .content { grid-template-columns: 1fr 1.1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Pull Request và code review</h1>
+      <p>VietNamExplore · Thành viên 3 · Nguyễn Diệp Vĩnh Khang</p>
+    </header>
+    <div class="content">
+      <div>
+        <section>
+          <h2>PR #8 đưa trang Ẩm thực vào main</h2>
+          <p>Sáu món ăn, ba bộ lọc vùng miền và bố cục 3/2/1 cột. <a href="https://github.com/DauCaoDung132/VietNamExplore/pull/8">Xem PR đã merge</a>.</p>
+        </section>
+        <section>
+          <h2>PR #3 sửa autoplay trên trang chủ</h2>
+          <p><a href="https://github.com/DauCaoDung132/VietNamExplore/pull/3#pullrequestreview-6063441754">Review ban đầu</a> phát hiện banner tự chuyển ảnh khi focus bàn phím vẫn ở trong đó. Khanh sửa ở <code>723a0e9</code>. <a href="https://github.com/DauCaoDung132/VietNamExplore/pull/3#pullrequestreview-6083871232">Review lại</a> xác nhận autoplay chỉ chạy khi cả chuột và focus rời banner.</p>
+        </section>
+        <section>
+          <h2>Conflict còn ở báo cáo</h2>
+          <p>Đề xuất giữ khung báo cáo trên <code>feature/home</code>, đưa Task 6 của Huy từ <code>main</code> vào và bổ sung minh chứng Task 3–4. <a href="REPORT.md">Xem báo cáo</a>.</p>
+        </section>
+      </div>
+      <figure>
+        <a href="images/tv3-pr3-conflict.png"><img src="images/tv3-pr3-conflict.png" width="1032" height="683" alt="Kết quả Git cho thấy docs/REPORT.md là tệp duy nhất có conflict giữa feature/home và main"></a>
+        <figcaption>Tái hiện local conflict của PR #3 từ hai commit trên GitHub. Bấm ảnh để xem dòng Git và dấu conflict ở kích thước đầy đủ.</figcaption>
+      </figure>
+    </div>
+  </main>
+</body>
+</html>
