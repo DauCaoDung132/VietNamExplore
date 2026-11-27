@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#23313b">
+  <title>VietNamExplore — Release &amp; Demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1e2830;
+      --muted: #46545d;
+      --nav: #23313b;
+      --green: #28683c;
+      --paper: #f7f4eb;
+      --line: #d5dde0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      background: #e8eded;
+      font: 1rem/1.6 "Segoe UI", Arial, sans-serif;
+    }
+
+    a { color: var(--green); }
+
+    button, a { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid #5a9d6f;
+      outline-offset: 3px;
+    }
+
+    .deck-header,
+    .deck-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .8rem clamp(1rem, 4vw, 3rem);
+      color: #fff;
+      background: var(--nav);
+    }
+
+    .deck-header strong { letter-spacing: .04em; }
+    .deck-header span,
+    .deck-footer p { margin: 0; color: #e5ecee; font-size: .9rem; }
+
+    .slide {
+      display: flex;
+      width: min(100% - 2rem, 76rem);
+      min-height: min(76vh, 48rem);
+      flex-direction: column;
+      justify-content: center;
+      margin: 2rem auto;
+      padding: clamp(2rem, 7vw, 6rem);
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      background: var(--paper);
+      box-shadow: 0 1.25rem 3rem rgb(23 43 58 / 12%);
+    }
+
+    .slide[hidden] { display: none; }
+    .eyebrow { margin: 0 0 .75rem; color: var(--green); font-size: .9rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1, h2, h3 { margin: 0; line-height: 1.12; }
+    h1 { max-width: 13ch; font-size: clamp(3rem, 8vw, 6.5rem); letter-spacing: -.055em; }
+    h2 { max-width: 20ch; font-size: clamp(2.2rem, 5vw, 4rem); letter-spacing: -.04em; }
+    h3 { font-size: 1.15rem; }
+    .lead { max-width: 55rem; margin: 1.25rem 0 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.4rem); }
+    .slide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .card { padding: 1.2rem; border: 1px solid var(--line); border-radius: .35rem; background: #fff; }
+    .card p { margin: .45rem 0 0; color: var(--muted); }
+    .card ul { margin: .55rem 0 0; padding-left: 1.2rem; }
+    .status-list { display: grid; gap: .75rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+    .status-list li { padding: .8rem 1rem; border-left: .3rem solid var(--green); background: #fff; }
+    .status-list .pending { border-left-color: #ad6d00; }
+    .status-list .blocked { border-left-color: #a63e36; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.7rem; }
+    .actions a,
+    .controls button {
+      display: inline-flex;
+      min-height: 2.8rem;
+      align-items: center;
+      justify-content: center;
+      padding: .55rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .25rem;
+      color: var(--ink);
+      background: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .actions a:first-child,
+    .controls button:last-child { border-color: var(--green); color: #fff; background: var(--green); }
+    .actions a:hover,
+    .controls button:hover:not(:disabled) { filter: brightness(.94); }
+    .controls button:disabled { opacity: .5; cursor: not-allowed; }
+    .controls { display: flex; align-items: center; gap: .65rem; }
+    .controls output { min-width: 5rem; text-align: center; font-variant-numeric: tabular-nums; }
+    .deck-footer { position: sticky; bottom: 0; }
+
+    @media (max-width: 42rem) {
+      .deck-header { align-items: flex-start; flex-direction: column; gap: .2rem; }
+      .slide { min-height: 68vh; margin-block: 1rem; padding: 1.5rem; }
+      .slide-grid { grid-template-columns: 1fr; }
+      .deck-footer { align-items: flex-start; flex-direction: column; }
+      .controls { width: 100%; justify-content: space-between; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .slide:not([hidden]) { animation: enter .2s ease-out; }
+      @keyframes enter { from { opacity: .5; transform: translateY(.4rem); } to { opacity: 1; transform: none; } }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .deck-header, .deck-footer { display: none; }
+      .slide, .slide[hidden] {
+        display: flex !important;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        break-after: page;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="deck-header">
+    <strong>VIETNAMEXPLORE · W07</strong>
+    <span>Release &amp; demo · Bản chuẩn bị, chưa phát hành</span>
+  </header>
+
+  <main id="slides" aria-label="Slide trình bày VietNamExplore">
+    <section class="slide" id="slide-1" aria-labelledby="title-1">
+      <p class="eyebrow">Version Control with Git &amp; GitHub</p>
+      <h1 id="title-1">VietNamExplore</h1>
+      <p class="lead">Một website du lịch Việt Nam — sáu thành viên, sáu góc nhìn, cùng xây dựng và phát hành bằng quy trình Git có review.</p>
+      <div class="actions">
+        <a href="../about.html#team">Mở trang giới thiệu nhóm</a>
+        <a href="REPORT.md">Mở báo cáo dự án</a>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-2" aria-labelledby="title-2" hidden>
+      <p class="eyebrow">Sản phẩm</p>
+      <h2 id="title-2">Khám phá Việt Nam qua một website tĩnh</h2>
+      <p class="lead">Dự án dùng HTML, CSS và JavaScript thuần; nội dung được chia theo trang, dễ đọc, dễ triển khai và phù hợp để thực hành cộng tác nhóm.</p>
+      <div class="slide-grid">
+        <article class="card"><h3>Nội dung du lịch</h3><p>Trang chủ, địa điểm, ẩm thực, văn hóa và kinh nghiệm du lịch.</p></article>
+        <article class="card"><h3>Trang giới thiệu</h3><p>Giới thiệu dự án, công nghệ, sáu thành viên và quy trình cộng tác.</p></article>
+        <article class="card"><h3>Công nghệ</h3><p>HTML5 · CSS3 · JavaScript · Git/GitHub · GitHub Pages.</p></article>
+        <article class="card"><h3>Mục tiêu nhóm</h3><p>Thực hành branch, commit, Pull Request, review, conflict và release.</p></article>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
+      <p class="eyebrow">Thành viên 6 · Giới thiệu &amp; phát hành</p>
+      <h2 id="title-3">Một hành trình, sáu thành viên</h2>
+      <p class="lead">Trang About hiển thị hồ sơ thành viên, nhiệm vụ, file phụ trách và nội dung đóng góp; người xem có thể mở cửa sổ chi tiết bằng JavaScript.</p>
+      <div class="slide-grid">
+        <article class="card"><h3>Trải nghiệm</h3><ul><li>Sáu thẻ thành viên tạo từ dữ liệu.</li><li>Nút mở chi tiết, chuyển thành viên trước/sau.</li><li>Điều hướng bàn phím và hỗ trợ reduced motion.</li></ul></article>
+        <article class="card"><h3>Thiết kế</h3><ul><li>Giới thiệu mục tiêu dự án và công nghệ.</li><li>Bố cục co giãn theo màn hình.</li><li>CSS riêng trong <code>assets/css/about.css</code>.</li></ul></article>
+      </div>
+      <div class="actions"><a href="../about.html#team">Xem sáu hồ sơ thành viên</a></div>
+    </section>
+
+    <section class="slide" id="slide-4" aria-labelledby="title-4" hidden>
+      <p class="eyebrow">Kịch bản demo</p>
+      <h2 id="title-4">Demo trang About trong 60 giây</h2>
+      <div class="slide-grid">
+        <article class="card"><h3>01 · Giới thiệu</h3><p>Giải thích mục tiêu website và các công nghệ sử dụng.</p></article>
+        <article class="card"><h3>02 · Thành viên</h3><p>Cuộn tới “Thành viên”, mở một thẻ và cho xem file/nhiệm vụ.</p></article>
+        <article class="card"><h3>03 · Tương tác</h3><p>Dùng nút trước/sau, phím mũi tên, Escape hoặc nút đóng.</p></article>
+        <article class="card"><h3>04 · Responsive</h3><p>Thu hẹp cửa sổ để minh họa thay đổi lưới và hộp chi tiết.</p></article>
+      </div>
+      <div class="actions"><a href="../about.html#team">Mở trang About</a></div>
+    </section>
+
+    <section class="slide" id="slide-5" aria-labelledby="title-5" hidden>
+      <p class="eyebrow">Tình trạng xác minh · 25/11/2026</p>
+      <h2 id="title-5">Mã đã chuẩn bị; release chưa được công bố</h2>
+      <ul class="status-list">
+        <li>Nhánh <code>feature/introduction</code> đã có commit <code>cb39ba9</code>.</li>
+        <li class="pending">Các PR nhóm #1, #3, #4 và #5 đang mở; nội dung trang của nhóm chưa hợp nhất vào <code>main</code>.</li>
+        <li class="blocked">Chưa có tag <code>v1.0.0</code>; URL GitHub Pages hiện trả HTTP 404.</li>
+        <li class="pending">Cả sáu trang HTML trên <code>main</code> hiện còn trống; các PR nội dung cần được review/merge trước demo toàn site.</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="slide-6" aria-labelledby="title-6" hidden>
+      <p class="eyebrow">Checklist trước khi phát hành</p>
+      <h2 id="title-6">Chỉ gắn v1.0.0 sau khi đã xác minh</h2>
+      <ol class="status-list">
+        <li>Review và merge các PR; bảo đảm các trang chính có nội dung.</li>
+        <li>Chạy <code>python tools/check_links.py</code> và sửa lỗi.</li>
+        <li>Merge release candidate vào <code>main</code>; tạo và push tag <code>v1.0.0</code>.</li>
+        <li>Bật GitHub Pages, kiểm tra URL công khai và chạy link checker với <code>--base</code>.</li>
+        <li>Lưu ảnh minh chứng vào <code>docs/images/</code>; cập nhật README, CHANGELOG và báo cáo.</li>
+      </ol>
+      <p class="lead">Không ghi “đã phát hành” cho tới khi tag và deployment hoạt động thật.</p>
+    </section>
+  </main>
+
+  <footer class="deck-footer">
+    <p>VietNamExplore · Dùng ← → hoặc Page Up/Down để chuyển slide · In để xuất PDF</p>
+    <nav class="controls" aria-label="Điều khiển slide">
+      <button id="previous" type="button" disabled>Trước</button>
+      <output id="slide-status" aria-live="polite">1 / 6</output>
+      <button id="next" type="button">Tiếp</button>
+    </nav>
+  </footer>
+
+  <script>
+    (function () {
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      var previous = document.getElementById('previous');
+      var next = document.getElementById('next');
+      var status = document.getElementById('slide-status');
+      var current = 0;
+
+      function show(index) {
+        current = Math.max(0, Math.min(index, slides.length - 1));
+        slides.forEach(function (slide, position) {
+          slide.hidden = position !== current;
+        });
+        previous.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+        status.textContent = (current + 1) + ' / ' + slides.length;
+        history.replaceState(null, '', '#slide-' + (current + 1));
+      }
+
+      previous.addEventListener('click', function () { show(current - 1); });
+      next.addEventListener('click', function () { show(current + 1); });
+      document.addEventListener('keydown', function (event) {
+        if (event.altKey || event.ctrlKey || event.metaKey) return;
+        if (event.key === 'ArrowRight' || event.key === 'PageDown') show(current + 1);
+        if (event.key === 'ArrowLeft' || event.key === 'PageUp') show(current - 1);
+        if (event.key === 'Home') show(0);
+        if (event.key === 'End') show(slides.length - 1);
+      });
+
+      var requested = Number((window.location.hash.match(/slide-(\d+)/) || [])[1]);
+      show(requested ? requested - 1 : 0);
+    }());
+  </script>
+</body>
+</html>
