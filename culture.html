@@ -1,1 +1,126 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VietNamExplore — Khám phá nét đẹp văn hóa Việt Nam qua lễ hội truyền thống, trang phục dân tộc và phong tục tập quán ba miền.">
+  <title>Văn hóa | VietNamExplore</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/culture.css">
+  <script src="assets/js/culture.js" defer></script>
+</head>
+<body class="culture-page">
+  <a class="skip-link" href="#noi-dung">Đến nội dung chính</a>
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="destinations.html">Địa điểm</a>
+        <a href="food.html">Ẩm thực</a>
+        <a href="culture.html" aria-current="page">Văn hóa</a>
+        <a href="tips.html">Kinh nghiệm</a>
+        <a href="about.html">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="noi-dung">
+    <section class="culture-hero" aria-labelledby="culture-title">
+      <div class="page-width culture-hero-inner">
+        <p class="section-kicker">Bản sắc Việt Nam</p>
+        <h1 id="culture-title">Văn hóa truyền thống ba miền</h1>
+        <p class="culture-lead">Tìm hiểu những giá trị tinh thần đặc sắc làm nên chiều sâu văn hóa Việt Nam qua ba chủ đề tiêu biểu: lễ hội dân gian, trang phục truyền thống và phong tục tập quán lâu đời.</p>
+        <div class="culture-toolbar">
+          <button type="button" class="btn-primary" id="toggle-all-btn" aria-pressed="false">Mở tất cả chi tiết</button>
+          <a class="btn-secondary" href="tips.html">Xem kinh nghiệm du lịch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-width culture-sections" aria-label="Các chủ đề văn hóa">
+      <article class="culture-card" id="le-hoi">
+        <img class="culture-image" src="assets/images/culture/festival.png" alt="Lễ hội truyền thống Việt Nam với cờ hội và nghi thức rước trên sông nước" loading="lazy">
+        <div class="culture-card-header">
+          <p class="culture-tag">Chủ đề 01 · Cộng đồng &amp; Tín ngưỡng</p>
+          <h2>Lễ hội truyền thống</h2>
+          <p class="culture-summary">Lễ hội Việt Nam gắn liền với lịch sử dựng nước, tín ngưỡng nông nghiệp và tinh thần hướng về cội nguồn ở khắp Bắc – Trung – Nam.</p>
+        </div>
+
+        <button type="button" class="btn-secondary culture-toggle" aria-expanded="false" aria-controls="detail-le-hoi">
+          Xem chi tiết
+        </button>
+
+        <div class="culture-detail" id="detail-le-hoi" hidden>
+          <ul class="culture-list">
+            <li><strong>Tết Nguyên Đán:</strong> Lễ hội lớn nhất trong năm, là dịp sum họp gia đình, dọn dẹp nhà cửa, gói bánh chưng – bánh tét và chúc Tết đầu xuân.</li>
+            <li><strong>Lễ hội Đền Hùng (Phú Thọ):</strong> Diễn ra vào mùng 10 tháng 3 âm lịch hằng năm để tưởng nhớ các Vua Hùng đã có công dựng nước.</li>
+            <li><strong>Lễ hội Chùa Hương &amp; Lễ hội Ok Om Bok:</strong> Phản ánh sự đa dạng tín ngưỡng từ lễ hội hành hương miền Bắc đến lễ cúng trăng đặc sắc của đồng bào Khmer Nam Bộ.</li>
+          </ul>
+          <p class="culture-note"><strong>Lưu ý khi tham gia:</strong> Nên ăn mặc lịch sự khi vào đền chùa, giữ gìn vệ sinh chung và tôn trọng nghi thức địa phương.</p>
+        </div>
+      </article>
+
+      <article class="culture-card" id="trang-phuc">
+        <img class="culture-image" src="assets/images/culture/costume.png" alt="Trang phục truyền thống Việt Nam với áo dài ngũ thân và nón quai thao" loading="lazy">
+        <div class="culture-card-header">
+          <p class="culture-tag">Chủ đề 02 · Thẩm mỹ &amp; Bản sắc</p>
+          <h2>Trang phục truyền thống</h2>
+          <p class="culture-summary">Trang phục Việt Nam vừa mềm mại, kín đáo vừa thích ứng hài hòa với khí hậu và sinh hoạt từng vùng miền, từng dân tộc.</p>
+        </div>
+
+        <button type="button" class="btn-secondary culture-toggle" aria-expanded="false" aria-controls="detail-trang-phuc">
+          Xem chi tiết
+        </button>
+
+        <div class="culture-detail" id="detail-trang-phuc" hidden>
+          <ul class="culture-list">
+            <li><strong>Áo dài:</strong> Biểu tượng văn hóa Việt Nam với phom dáng thanh lịch, thường xuất hiện trong dịp lễ Tết, cưới hỏi, sự kiện trang trọng và môi trường học đường.</li>
+            <li><strong>Áo bà ba &amp; Nón lá:</strong> Hình ảnh quen thuộc gắn với đời sống lao động mộc mạc của người dân vùng sông nước Nam Bộ và làng quê Việt.</li>
+            <li><strong>Trang phục 54 dân tộc:</strong> Nổi bật với thổ cẩm rực rỡ của người H'Mông, Thái, Tày ở miền núi phía Bắc hay trang phục truyền thống Chăm, Ê Đê ở miền Trung – Tây Nguyên.</li>
+          </ul>
+          <p class="culture-note"><strong>Gợi ý trải nghiệm:</strong> Du khách có thể thuê áo dài chụp ảnh tại phố cổ Hội An, kinh thành Huế hoặc chợ nổi miền Tây.</p>
+        </div>
+      </article>
+
+      <article class="culture-card" id="phong-tuc">
+        <img class="culture-image" src="assets/images/culture/custom.png" alt="Gia đình Việt Nam sum vầy gói bánh chưng bên cây quất và hoa mai ngày Tết" loading="lazy">
+        <div class="culture-card-header">
+          <p class="culture-tag">Chủ đề 03 · Đời sống &amp; Ứng xử</p>
+          <h2>Phong tục &amp; Tập quán</h2>
+          <p class="culture-summary">Những nếp sống đẹp được truyền qua nhiều thế hệ, đề cao lòng hiếu thảo, sự hiếu khách và tinh thần gắn kết cộng đồng.</p>
+        </div>
+
+        <button type="button" class="btn-secondary culture-toggle" aria-expanded="false" aria-controls="detail-phong-tuc">
+          Xem chi tiết
+        </button>
+
+        <div class="culture-detail" id="detail-phong-tuc" hidden>
+          <ul class="culture-list">
+            <li><strong>Thờ cúng tổ tiên:</strong> Phong tục phổ biến trong hầu hết các gia đình Việt, thể hiện đạo lý "uống nước nhớ nguồn" vào các ngày giỗ, rằm, mùng một và dịp Tết.</li>
+            <li><strong>Văn hóa mời trà &amp; tiếp khách:</strong> Chén trà nóng đầu câu chuyện là nét ứng xử thân tình, thể hiện sự tôn trọng và hiếu khách của gia chủ.</li>
+            <li><strong>Tập quán chúc Tết &amp; lì xì:</strong> Trẻ nhỏ và người cao tuổi trao nhau lời chúc bình an, sức khỏe kèm phong bao lì xì đỏ tượng trưng cho may mắn đầu năm.</li>
+          </ul>
+          <p class="culture-note"><strong>Ứng xử văn minh:</strong> Khi đến thăm nhà người dân địa phương, nên chào hỏi người lớn tuổi trước và cởi giày dép nếu gia chủ có quy định.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <div class="footer-meta">
+        <p>Đồ án W07 — Version Control with Git &amp; GitHub · Nhóm VietNamExplore</p>
+        <ul class="footer-links">
+          <li><a href="destinations.html">Địa điểm</a></li>
+          <li><a href="food.html">Ẩm thực</a></li>
+          <li><a href="culture.html">Văn hóa</a></li>
+          <li><a href="tips.html">Kinh nghiệm</a></li>
+          <li><a href="about.html">Giới thiệu nhóm</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
