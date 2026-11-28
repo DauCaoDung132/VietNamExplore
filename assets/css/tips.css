@@ -10,6 +10,13 @@
   padding-block: 2.5rem 2.25rem;
 }
 
+.tips-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: 2rem;
+}
+
 .tips-hero-inner {
   display: flex;
   flex-direction: column;
@@ -46,6 +53,42 @@
   margin-top: 0.35rem;
 }
 
+/* Khung ảnh minh họa dùng chung trên trang Tips */
+.tips-media-frame {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--surface);
+  box-shadow: 0 8px 22px rgba(30, 40, 48, 0.06);
+}
+
+.tips-media-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.tips-media-frame figcaption {
+  padding: 0.6rem 0.85rem;
+  border-top: 1px solid var(--line);
+  background: #f8fafa;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.tips-banner-media {
+  margin-bottom: 1.5rem;
+}
+
+.tips-banner-media img {
+  aspect-ratio: 16 / 7;
+  max-height: 22rem;
+  object-position: center 62%;
+}
+
 /* Sections */
 .tips-section {
   padding-block: 2.5rem;
@@ -63,6 +106,10 @@
   margin-bottom: 1.5rem;
 }
 
+.section-head-flush {
+  margin-bottom: 0;
+}
+
 .section-head h2 {
   font-size: clamp(1.35rem, 2.2vw, 1.7rem);
   color: var(--ink);
@@ -71,6 +118,29 @@
 .section-desc {
   max-width: 48rem;
   color: var(--muted);
+}
+
+/* Bố cục 2 cột giới thiệu + ảnh cho Mục 1 & Mục 2 */
+.section-intro-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 1.6rem;
+}
+
+.section-intro-reverse {
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+}
+
+.section-quick-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--ink);
+  font-size: 0.94rem;
 }
 
 /* Button overrides for <button> elements */
@@ -546,9 +616,17 @@
 
 /* Responsive — tuân thủ đúng breakpoints 50rem (tablet) & 35rem (mobile) của nhóm */
 @media (max-width: 50rem) {
+  .tips-hero-grid,
+  .section-intro-split,
+  .section-intro-reverse,
   .checklist-groups,
   .tips-callout-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Trên mobile/tablet, đưa chữ lên trước ảnh ở mục Hành lý để đọc tự nhiên hơn */
+  .section-intro-reverse .tips-media-frame {
+    order: 2;
   }
 
   .transport-grid {
@@ -573,6 +651,12 @@
     padding-block: 1.85rem;
   }
 
+  .tips-banner-media img {
+    aspect-ratio: 3 / 2;
+    max-height: none;
+    object-position: center;
+  }
+
   .checklist-panel {
     padding: 1rem;
   }
@@ -591,4 +675,3 @@
     text-align: center;
   }
 }
-
