@@ -1,1 +1,677 @@
+/* =========================================================
+   Stylesheet riêng cho trang Kinh nghiệm du lịch (tips.html)
+   Sử dụng biến màu & layout chuẩn từ assets/css/style.css
+   ========================================================= */
 
+/* Hero */
+.tips-hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding-block: 2.5rem 2.25rem;
+}
+
+.tips-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.tips-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tips-eyebrow {
+  width: fit-content;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: #e7f3ea;
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.tips-hero h1 {
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  color: var(--ink);
+}
+
+.tips-lead {
+  max-width: 46rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.tips-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+
+/* Khung ảnh minh họa dùng chung trên trang Tips */
+.tips-media-frame {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--surface);
+  box-shadow: 0 8px 22px rgba(30, 40, 48, 0.06);
+}
+
+.tips-media-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.tips-media-frame figcaption {
+  padding: 0.6rem 0.85rem;
+  border-top: 1px solid var(--line);
+  background: #f8fafa;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.tips-banner-media {
+  margin-bottom: 1.5rem;
+}
+
+.tips-banner-media img {
+  aspect-ratio: 16 / 7;
+  max-height: 22rem;
+  object-position: center 62%;
+}
+
+/* Sections */
+.tips-section {
+  padding-block: 2.5rem;
+}
+
+.tips-section-alt {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-head-flush {
+  margin-bottom: 0;
+}
+
+.section-head h2 {
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  color: var(--ink);
+}
+
+.section-desc {
+  max-width: 48rem;
+  color: var(--muted);
+}
+
+/* Bố cục 2 cột giới thiệu + ảnh cho Mục 1 & Mục 2 */
+.section-intro-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 1.6rem;
+}
+
+.section-intro-reverse {
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+}
+
+.section-quick-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--ink);
+  font-size: 0.94rem;
+}
+
+/* Button overrides for <button> elements */
+.tips-section button.btn-primary,
+.tips-section button.btn-secondary {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.tips-section button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tips-section button.btn-secondary:disabled:hover {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+/* Mục 1: Checklist Panel */
+.checklist-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+.checklist-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.summary-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.summary-label {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.summary-count {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.summary-badge {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.summary-badge.is-progress {
+  background: #e9f5ec;
+  border-color: var(--green-soft);
+  color: var(--green);
+}
+
+.summary-badge.is-done {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.progress-track {
+  width: 100%;
+  height: 0.65rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--green);
+  transition: width 0.25s ease;
+}
+
+/* Toolbar */
+.checklist-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.filter-group,
+.action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.filter-btn.is-active {
+  background: var(--nav);
+  border-color: var(--nav);
+  color: #fff;
+}
+
+/* Add Item Form */
+.add-item-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 0.65rem;
+  align-items: stretch;
+}
+
+.add-item-field input,
+.add-item-category select {
+  width: 100%;
+  height: 100%;
+  min-height: 2.6rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.2rem;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.add-item-field input:focus,
+.add-item-category select:focus {
+  border-color: var(--green);
+}
+
+.form-feedback {
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-feedback.is-error {
+  background: #fdeeee;
+  border: 1px solid #e6b8b8;
+  color: #9e2a2b;
+}
+
+.form-feedback.is-success {
+  background: #e9f5ec;
+  border: 1px solid var(--green-soft);
+  color: var(--green);
+}
+
+.checklist-empty {
+  padding: 1.25rem;
+  border: 1px dashed var(--line);
+  border-radius: 0.35rem;
+  background: var(--bg);
+  color: var(--muted);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Checklist Groups */
+.checklist-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.checklist-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--bg);
+}
+
+.checklist-card h3 {
+  font-size: 1.05rem;
+  color: var(--nav);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.checklist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  background: var(--surface);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checklist-item:hover {
+  border-color: var(--green-soft);
+}
+
+.checklist-item.is-checked {
+  background: #f2f8f3;
+  border-color: var(--green-soft);
+}
+
+.checklist-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.checklist-checkbox {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.2rem;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.checklist-text {
+  word-break: break-word;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.checklist-item.is-checked .checklist-text {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.btn-remove-item {
+  flex-shrink: 0;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 0.2rem;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-remove-item:hover {
+  border-color: #c94a4a;
+  color: #9e2a2b;
+  background: #fdeeee;
+}
+
+/* Mục 2: Chi phí */
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--surface);
+}
+
+.cost-table {
+  width: 100%;
+  min-width: 38rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.cost-table th,
+.cost-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.cost-table thead th {
+  background: var(--nav);
+  color: #fff;
+  font-size: 0.94rem;
+}
+
+.cost-table tbody th {
+  color: var(--ink);
+  font-weight: 700;
+  background: #f8fafa;
+}
+
+.cost-table tfoot th,
+.cost-table tfoot td {
+  border-bottom: 0;
+  background: #eef6f0;
+  color: var(--green);
+}
+
+.cost-note {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.tips-callout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.callout-box {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: 0.3rem;
+  background: var(--bg);
+}
+
+.callout-box h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.65rem;
+  color: var(--ink);
+}
+
+.callout-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+/* Mục 3: Di chuyển */
+.transport-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.transport-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--surface);
+}
+
+.transport-tag {
+  width: fit-content;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.2rem;
+  background: #e7f3ea;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.transport-card h3 {
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.transport-card p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.transport-meta {
+  margin: 0.2rem 0 0;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+/* Mục 4: FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.faq-item[open] {
+  border-color: var(--green-soft);
+  background: var(--surface);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--green);
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-answer {
+  padding: 0 1.15rem 1.05rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Responsive — tuân thủ đúng breakpoints 50rem (tablet) & 35rem (mobile) của nhóm */
+@media (max-width: 50rem) {
+  .tips-hero-grid,
+  .section-intro-split,
+  .section-intro-reverse,
+  .checklist-groups,
+  .tips-callout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Trên mobile/tablet, đưa chữ lên trước ảnh ở mục Hành lý để đọc tự nhiên hơn */
+  .section-intro-reverse .tips-media-frame {
+    order: 2;
+  }
+
+  .transport-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .add-item-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .add-item-form .btn-primary {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 35rem) {
+  .tips-hero {
+    padding-block: 1.75rem 1.6rem;
+  }
+
+  .tips-section {
+    padding-block: 1.85rem;
+  }
+
+  .tips-banner-media img {
+    aspect-ratio: 3 / 2;
+    max-height: none;
+    object-position: center;
+  }
+
+  .checklist-panel {
+    padding: 1rem;
+  }
+
+  .add-item-form,
+  .transport-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-group {
+    width: 100%;
+  }
+
+  .action-group button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

@@ -21,7 +21,7 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 | **Đậu Cao Dũng** (`DauCaoDung132`, 25127301) | Tasks 1, 2, 3, 4, 7 | Repository setup, destinations page, branches and merge conflict. | Add branch, commit, PR and conflict evidence. |
 | **Nguyễn Diệp Vĩnh Khang** (`KhangNguyendotcpp`, 25127366) | Tasks 1, 2, 3, 4, 7 | Built and tested the Cuisine page, reviewed Khanh's home-page PR, and documented the report conflict and proposed resolution. | [`feature/food`](https://github.com/DauCaoDung132/VietNamExplore/tree/feature/food), merged [PR #8](https://github.com/DauCaoDung132/VietNamExplore/pull/8), [review on PR #3](https://github.com/DauCaoDung132/VietNamExplore/pull/3#pullrequestreview-6063441754), [conflict evidence](images/tv3-pr3-conflict.png). |
 | **Nguyễn Phi Bảo Bình** (`npbbinh2511-arch`, 25127020) | Tasks 1, 2, 3, 5, 7 | Culture page and coordination on the revert exercise. | PR [#4](https://github.com/DauCaoDung132/VietNamExplore/pull/4); add verified commit/revert evidence. |
-| **Trương Cẩm Tú Nga** (`tunnnga2605-png`, 25127427) | Tasks 1, 2, 3, 5, 7 | Travel tips page, revert and link testing. | PR [#5](https://github.com/DauCaoDung132/VietNamExplore/pull/5); add verified revert/test evidence. |
+| **Trương Cẩm Tú Nga** (`tunnnga2605-png`, 25127427) | Tasks 1, 2, 3, 5, 7 | Xây dựng trang Kinh nghiệm du lịch (`tips.html`, `assets/css/tips.css`, `assets/js/tips.js`, 4 ảnh minh họa trong `assets/images/tips/`); review code PR #4; thực hiện `git revert` khôi phục liên kết lỗi cho Task 5; kiểm thử chức năng và liên kết. | Branch [`feature/tips`](https://github.com/DauCaoDung132/VietNamExplore/tree/feature/tips); PR [#5](https://github.com/DauCaoDung132/VietNamExplore/pull/5) (commits `bb92a39`, `c1981c6`, `b3a583a`); review PR [#4](https://github.com/DauCaoDung132/VietNamExplore/pull/4); revert commit [`8fa3911`](https://github.com/DauCaoDung132/VietNamExplore/commit/8fa3911). |
 | **Nguyễn Minh Huy** (`nmhuy1211`, 25127062) | Tasks 1, 2, 3, 6, 7 | About page, release preparation, and Task 6 report/demo materials. | Branch [`feature/introduction`](https://github.com/DauCaoDung132/VietNamExplore/tree/feature/introduction); open PR [#6](https://github.com/DauCaoDung132/VietNamExplore/pull/6). Add verified review and release evidence when available. |
 
 ## Implementation and Evidence
@@ -29,10 +29,13 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 ### Task 1 — Repository và commit
 
 - Kết quả/bằng chứng: nhóm bổ sung link repository, danh sách commit và cấu hình Git identity thực tế.
+- **Thành viên 5 — Trương Cẩm Tú Nga (`tunnnga2605-png`):** Đã cấu hình Git identity cá nhân, clone repository và thực hiện các meaningful commits xây dựng trang `tips.html` (`bb92a39`), `assets/css/tips.css` (`c1981c6`), `assets/js/tips.js` (`b3a583a`) cùng các commit bổ sung ảnh minh họa theo góp ý review.
 
 ### Task 2 — Branches
 
 - Kết quả/bằng chứng: nhóm bổ sung danh sách feature branch và commit tương ứng của từng thành viên.
+- **Thành viên 5 (`feature/tips`):** Phát triển toàn bộ trang Kinh nghiệm du lịch độc lập trên nhánh [`feature/tips`](https://github.com/DauCaoDung132/VietNamExplore/tree/feature/tips) tách từ `main`.
+  ![Nhánh feature/tips và lịch sử commit của Thành viên 5](images/member5-git-log.png)
 
 ### Task 3 — Pull Request và review
 
@@ -43,6 +46,12 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 - **Team snapshot, 27 November 2026.** All six members had opened a PR: [Home #3](https://github.com/DauCaoDung132/VietNamExplore/pull/3), [Destinations #9](https://github.com/DauCaoDung132/VietNamExplore/pull/9), [Cuisine #8](https://github.com/DauCaoDung132/VietNamExplore/pull/8), [Culture #4](https://github.com/DauCaoDung132/VietNamExplore/pull/4), [Travel Tips #5](https://github.com/DauCaoDung132/VietNamExplore/pull/5), and [About #6](https://github.com/DauCaoDung132/VietNamExplore/pull/6). PRs [#2](https://github.com/DauCaoDung132/VietNamExplore/pull/2), [#6](https://github.com/DauCaoDung132/VietNamExplore/pull/6), and [#8](https://github.com/DauCaoDung132/VietNamExplore/pull/8) had merged into `main`. [PR #7](https://github.com/DauCaoDung132/VietNamExplore/pull/7) synced `main` into `feature/food`. The team review target still needs further evidence.
 - **Slide material.** [PR and review evidence](MEMBER_3_REVIEW.html).
 
+- **Thành viên 5 — Trương Cẩm Tú Nga (`tunnnga2605-png`):**
+  - Tạo [PR #5](https://github.com/DauCaoDung132/VietNamExplore/pull/5) (`feature/tips` → `main`) có tiêu đề, mô tả triển khai và tiếp thu góp ý reviewer để bổ sung 4 ảnh minh họa cho trang `tips.html`.
+  - Tham gia review code và xác nhận gộp [PR #4](https://github.com/DauCaoDung132/VietNamExplore/pull/4) (`culture.html`, `assets/css/culture.css`, `assets/js/culture.js`) vào nhánh `main` bằng merge commit [`caf2cd1`](https://github.com/DauCaoDung132/VietNamExplore/commit/caf2cd1).
+  ![Pull Request #5 của Thành viên 5](images/member5-pr-created.png)
+  ![Minh chứng review PR #4 của Thành viên 5](images/member5-pr-review.png)
+
 ### Task 4 — Merge conflict
 
 - **Existing conflict.** Khang reviewed [Khanh's PR #3](https://github.com/DauCaoDung132/VietNamExplore/pull/3). Khanh's report on [`feature/home` at `723a0e9`](https://github.com/DauCaoDung132/VietNamExplore/blob/723a0e9c633f74bbcfcf73a16111f8c59957a83c/docs/REPORT.md) conflicts with the report on [`main` at `d989449`](https://github.com/DauCaoDung132/VietNamExplore/blob/d989449d79d18005be51880e67ead07622e17685/docs/REPORT.md), which includes Huy's Task 6 contribution from [PR #6](https://github.com/DauCaoDung132/VietNamExplore/pull/6).
@@ -50,12 +59,31 @@ VietNamExplore là website tĩnh giới thiệu du lịch Việt Nam, gồm sáu
 
   ![Git output and conflict markers for docs/REPORT.md in PR #3](images/tv3-pr3-conflict.png)
 
-- **Review recommendation.** Use Khanh's `feature/home` version (Current Change when resolving from that branch) as the report structure. Restore Huy's Task 6 contribution from `main` and integrate the verified Task 3–4 evidence. Remove the conflict markers and check the report links before committing the resolution.
+- **Review recommendation.** Use Khanh's `feature/home` version (Current Change when resolving from that branch) as the report structure. Carry over the latest contributions on `main`, including Huy's Task 6 and Nga's evidence from PR #13, then integrate the verified Task 3–4 evidence. Remove the conflict markers and check the report links before committing the resolution.
 - **Status as of 27 November 2026.** PR #3 remained open with a merge conflict. The review and reproduction evidence are available. The resolution commit and post-resolution evidence are pending on PR #3.
 
 ### Task 5 — Git revert
+*(Responsible members: **Member 4 — Nguyễn Phi Bảo Bình** & **Member 5 — Trương Cẩm Tú Nga**)*
 
-- Kết quả/bằng chứng: nhóm bổ sung hash commit gây lỗi, hash commit revert và ảnh kiểm tra liên kết sau khi hoàn tác.
+- **Work completed**:
+  - **Tạo commit gây lỗi (Thành viên 4 — `npbbinh2511-arch`):** Trên nhánh [`feature/culture`](https://github.com/DauCaoDung132/VietNamExplore/tree/feature/culture) thuộc [PR #4](https://github.com/DauCaoDung132/VietNamExplore/pull/4), cố ý sửa liên kết điều hướng tại dòng 22 của `culture.html` từ `href="tips.html"` sang `href="tips-broken.html"` (commit `2bcc791`).
+  - **Xác định lỗi và hoàn tác (Thành viên 5 — `tunnnga2605-png`):** Chuyển sang nhánh `feature/culture`, dùng `git show 2bcc791` kiểm tra chính xác diff gây lỗi, mở `culture.html` tái hiện lỗi `ERR_FILE_NOT_FOUND` khi bấm mục **Kinh nghiệm**, sau đó chạy lệnh `git revert 2bcc791 --no-edit` để tạo commit hoàn tác an toàn `8fa3911` mà không ghi đè hay xóa lịch sử Git, rồi push lên GitHub.
+  - **Xác minh sau hoàn tác:** Kiểm tra lại bằng `git log -n 3 --oneline` và bấm lại mục **Kinh nghiệm** trên `culture.html` để xác nhận liên kết đã trỏ lại đúng `tips.html`.
+- **Evidence**:
+  - Pull Request thực hành: [PR #4 — feat: build culture page](https://github.com/DauCaoDung132/VietNamExplore/pull/4)
+  - Faulty commit (Thành viên 4): [`2bcc791`](https://github.com/DauCaoDung132/VietNamExplore/commit/2bcc791ac1858584e0f1a3ccf2cfda4102540e3c) — *Update navigation link in culture.html*
+  - Revert commit (Thành viên 5): [`8fa3911`](https://github.com/DauCaoDung132/VietNamExplore/commit/8fa3911) — *Revert "Update navigation link in culture.html"*
+  - Ảnh kiểm tra commit lỗi (`git show 2bcc791`):
+    ![Kiểm tra commit lỗi 2bcc791 bằng git show](images/member5-task5-show.png)
+  - Ảnh trình duyệt báo lỗi trước khi revert (`tips-broken.html` — `ERR_FILE_NOT_FOUND`):
+    ![Lỗi File not found khi bấm liên kết hỏng trước khi revert](images/member5-task5-broken.png)
+  - Ảnh thực thi lệnh `git revert` và lịch sử `git log`:
+    ![Thực hiện lệnh git revert và kiểm tra lịch sử commit](images/member5-task5-revert-log.png)
+  - Ảnh lịch sử commit trên GitHub PR #4 ghi nhận đủ cả commit lỗi và commit hoàn tác:
+    ![Lịch sử faulty commit và revert commit trên GitHub PR #4](images/member5-task5-github-revert.png)
+- **Result**:
+  - Liên kết điều hướng mục **Kinh nghiệm** trong `culture.html` đã được khôi phục về `tips.html`, không còn lỗi `ERR_FILE_NOT_FOUND`.
+  - Lịch sử Git giữ nguyên vẹn cả commit gây lỗi (`2bcc791`) lẫn commit hoàn tác (`8fa3911`) từ hai tài khoản GitHub khác nhau theo đúng yêu cầu Task 5.
 
 ### Task 6. Preparing a Release and Deploying the Website
 *(Responsible member: **Member 6 — Nguyễn Minh Huy**)*
@@ -98,7 +126,7 @@ Chưa thể xác nhận các chỉ tiêu nghiệm thu khi thiếu trạng thái 
 
 **Cuisine page (Member 3).** Chrome checks at 1440, 768 and 390 px verified the three-, two- and one-column layouts, seven local photos, and six navigation links pointing to repository files. Each region showed two expected dishes and updated the description and count. The “Tất cả” option restored all six dishes. Arrow-key selection worked and all six dishes remained readable with JavaScript disabled. [Desktop evidence](images/tv3-food-desktop.jpg) · [Mobile evidence](images/tv3-food-mobile.jpg).
 
-On `main` at `d989449`, the full-site link checker still reported eight errors because the Home, Destinations, Culture and Travel Tips pages were empty and had no navigation. The Cuisine and About pages had no reported errors.
+On `main` at `dd3b58c`, the link checker examined six pages and 109 internal references. It reported two errors because `index.html` was empty and had no navigation. The other five pages had no reported errors.
 
 Sau khi các trang còn lại được hoàn thiện, chạy:
 

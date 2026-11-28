@@ -1,1 +1,502 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kinh nghiệm du lịch Việt Nam thực tế: checklist hành lý tương tác, dự trù chi phí, mẹo di chuyển và câu hỏi thường gặp.">
+  <title>Kinh nghiệm du lịch — VietNamExplore</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tips.css">
+  <script src="assets/js/tips.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#noi-dung">Đến nội dung chính</a>
 
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="destinations.html">Địa điểm</a>
+        <a href="food.html">Ẩm thực</a>
+        <a href="culture.html">Văn hóa</a>
+        <a href="tips.html" aria-current="page">Kinh nghiệm</a>
+        <a href="about.html">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="noi-dung">
+    <section class="tips-hero">
+      <div class="page-width tips-hero-grid">
+        <div class="tips-hero-inner">
+          <p class="tips-eyebrow">Cẩm nang thực hành</p>
+          <h1>Kinh nghiệm du lịch Việt Nam</h1>
+          <p class="tips-lead">
+            Tổng hợp checklist chuẩn bị hành lý, ước tính chi phí theo ngày, kinh nghiệm di chuyển Bắc – Trung – Nam và giải đáp nhanh trước khi khởi hành.
+          </p>
+          <nav class="tips-quick-nav" aria-label="Chuyển nhanh đến các mục trên trang">
+            <a class="btn-primary" href="#hanh-ly">Hành lý &amp; Checklist</a>
+            <a class="btn-secondary" href="#chi-phi">Chi phí dự kiến</a>
+            <a class="btn-secondary" href="#di-chuyen">Di chuyển</a>
+            <a class="btn-secondary" href="#faq">FAQ</a>
+          </nav>
+        </div>
+
+        <figure class="tips-media-frame tips-hero-media">
+          <img
+            src="assets/images/tips/tips-hero.png"
+            alt="Du khách mang balo ngắm toàn cảnh núi đá vôi xanh và dòng sông ngọc tại Việt Nam"
+          >
+          <figcaption>Chuẩn bị kỹ trước chuyến đi giúp bạn tận hưởng trọn vẹn cảnh sắc ba miền.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- MỤC 1: HÀNH LÝ & CHECKLIST TƯƠNG TÁC -->
+    <section id="hanh-ly" class="tips-section">
+      <div class="page-width">
+        <div class="section-intro-split section-intro-reverse">
+          <figure class="tips-media-frame">
+            <img
+              src="assets/images/tips/tips-packing.png"
+              alt="Balo du lịch, trang phục gọn nhẹ, mũ cói, kính râm, máy ảnh và sổ tay sắp xếp trên bàn gỗ"
+              loading="lazy"
+            >
+            <figcaption>Phân nhóm vật dụng cần thiết trước khi xếp vào balo hoặc vali.</figcaption>
+          </figure>
+
+          <div class="section-head section-head-flush">
+            <h2>1. Hành lý &amp; Checklist chuẩn bị</h2>
+            <p class="section-desc">
+              Đánh dấu những vật dụng bạn đã sắp xếp xong. Trạng thái được tự động lưu trên trình duyệt để bạn dễ theo dõi lại trước giờ khởi hành.
+            </p>
+            <ul class="section-quick-tips">
+              <li>Ưu tiên quần áo thoáng nhẹ, dễ phối và mang thêm áo khoác mỏng cho vùng núi hoặc phòng điều hòa.</li>
+              <li>Giữ giấy tờ tùy thân, tiền mặt và sạc dự phòng ở ngăn dễ lấy trong hành lý xách tay.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="checklist-panel">
+          <div class="checklist-summary">
+            <div class="summary-top">
+              <div>
+                <p class="summary-label">Tiến độ chuẩn bị</p>
+                <p id="checklist-count" class="summary-count" aria-live="polite">Đã chuẩn bị 0 / 12 mục (0%)</p>
+              </div>
+              <p id="checklist-status" class="summary-badge" aria-live="polite">Chưa bắt đầu</p>
+            </div>
+            <div
+              id="checklist-progress-track"
+              class="progress-track"
+              role="progressbar"
+              aria-label="Tiến độ chuẩn bị hành lý"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            >
+              <div id="checklist-progress-bar" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="checklist-toolbar">
+            <div class="filter-group" role="group" aria-label="Lọc danh sách hành lý">
+              <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">
+                Tất cả (<span data-count-for="all">12</span>)
+              </button>
+              <button type="button" class="filter-btn" data-filter="unchecked" aria-pressed="false">
+                Chưa xong (<span data-count-for="unchecked">12</span>)
+              </button>
+              <button type="button" class="filter-btn" data-filter="checked" aria-pressed="false">
+                Đã xong (<span data-count-for="checked">0</span>)
+              </button>
+            </div>
+
+            <div class="action-group">
+              <button type="button" id="btn-check-all" class="btn-secondary">Chọn tất cả</button>
+              <button type="button" id="btn-uncheck-all" class="btn-secondary" disabled>Bỏ chọn tất cả</button>
+              <button type="button" id="btn-reset-default" class="btn-secondary" disabled>Khôi phục mặc định</button>
+            </div>
+          </div>
+
+          <form id="checklist-add-form" class="add-item-form" novalidate>
+            <div class="add-item-field">
+              <label for="new-item-input" class="visually-hidden">Tên vật dụng cần thêm</label>
+              <input
+                type="text"
+                id="new-item-input"
+                name="itemText"
+                maxlength="80"
+                autocomplete="off"
+                placeholder="Thêm vật dụng riêng (ví dụ: Máy ảnh, gối cổ...)"
+              >
+            </div>
+            <div class="add-item-category">
+              <label for="new-item-category" class="visually-hidden">Chọn nhóm hành lý</label>
+              <select id="new-item-category" name="itemCategory">
+                <option value="documents">Giấy tờ &amp; Tài chính</option>
+                <option value="clothing">Trang phục</option>
+                <option value="health">Cá nhân &amp; Y tế</option>
+                <option value="tech">Thiết bị điện tử</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary">Thêm mục</button>
+          </form>
+          <p id="form-feedback" class="form-feedback" role="alert" aria-live="assertive" hidden></p>
+
+          <p id="checklist-empty" class="checklist-empty" hidden></p>
+
+          <div id="checklist-groups" class="checklist-groups">
+            <article class="checklist-card" data-category="documents">
+              <h3>Giấy tờ &amp; Tài chính</h3>
+              <ul class="checklist-list" data-list-category="documents">
+                <li class="checklist-item" data-item-id="doc-1" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">CCCD / Hộ chiếu và bản sao lưu trên điện thoại</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="doc-2" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Vé máy bay, vé tàu xe và xác nhận đặt phòng</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="doc-3" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Thẻ ngân hàng, tiền mặt mệnh giá nhỏ và bằng lái xe</span>
+                  </label>
+                </li>
+              </ul>
+            </article>
+
+            <article class="checklist-card" data-category="clothing">
+              <h3>Trang phục</h3>
+              <ul class="checklist-list" data-list-category="clothing">
+                <li class="checklist-item" data-item-id="cloth-1" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Quần áo thoáng mát và trang phục lịch sự khi vào đền chùa</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="cloth-2" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Giày thể thao êm chân và một đôi dép nhẹ dễ thay</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="cloth-3" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Áo khoác mỏng, áo mưa gấp gọn hoặc ô che nắng</span>
+                  </label>
+                </li>
+              </ul>
+            </article>
+
+            <article class="checklist-card" data-category="health">
+              <h3>Cá nhân &amp; Y tế</h3>
+              <ul class="checklist-list" data-list-category="health">
+                <li class="checklist-item" data-item-id="health-1" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Kem chống nắng, mũ rộng vành và kính râm</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="health-2" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Thuốc cơ bản (say xe, đau bụng, hạ sốt) và băng cá nhân</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="health-3" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Bình nước cá nhân, khăn giấy ướt và xịt chống côn trùng</span>
+                  </label>
+                </li>
+              </ul>
+            </article>
+
+            <article class="checklist-card" data-category="tech">
+              <h3>Thiết bị điện tử</h3>
+              <ul class="checklist-list" data-list-category="tech">
+                <li class="checklist-item" data-item-id="tech-1" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Điện thoại cài sẵn bản đồ offline và ứng dụng gọi xe</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="tech-2" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Sạc dự phòng (để trong hành lý xách tay khi đi máy bay)</span>
+                  </label>
+                </li>
+                <li class="checklist-item" data-item-id="tech-3" data-default="true">
+                  <label class="checklist-label">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checklist-text">Củ sạc đa năng, cáp sạc và túi chống nước cho điện thoại</span>
+                  </label>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MỤC 2: CHI PHÍ DỰ KIẾN -->
+    <section id="chi-phi" class="tips-section tips-section-alt">
+      <div class="page-width">
+        <div class="section-intro-split">
+          <div class="section-head section-head-flush">
+            <h2>2. Chi phí dự kiến mỗi ngày</h2>
+            <p class="section-desc">
+              Mức ngân sách tham khảo cho 01 người/ngày (chưa gồm vé máy bay khứ hồi đường dài). Chi phí thực tế thay đổi theo mùa cao điểm và điểm đến.
+            </p>
+            <ul class="section-quick-tips">
+              <li>Ẩm thực đường phố và cà phê địa phương có mức giá rất dễ chịu, chỉ từ 25.000 – 65.000 đ/món.</li>
+              <li>Nên dự phòng thêm khoảng 15–20% ngân sách cho vé tham quan hoặc phát sinh thời tiết.</li>
+            </ul>
+          </div>
+
+          <figure class="tips-media-frame">
+            <img
+              src="assets/images/tips/tips-cost.png"
+              alt="Bữa sáng bình dân đặc trưng tại Việt Nam gồm phở bò, rau thơm, trái cây tươi và cà phê sữa đá"
+              loading="lazy"
+            >
+            <figcaption>Trải nghiệm ẩm thực đường phố và cà phê địa phương giúp tối ưu chi phí ăn uống.</figcaption>
+          </figure>
+        </div>
+
+        <div class="table-scroll" tabindex="0" aria-label="Bảng dự trù chi phí du lịch theo ngày">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th scope="col">Hạng mục</th>
+                <th scope="col">Tiết kiệm</th>
+                <th scope="col">Trung bình</th>
+                <th scope="col">Thoải mái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Lưu trú</th>
+                <td>150.000 – 250.000 đ<span class="cost-note">Hostel, homestay tập thể</span></td>
+                <td>450.000 – 800.000 đ<span class="cost-note">Khách sạn 2–3 sao, phòng riêng</span></td>
+                <td>1.500.000 – 3.000.000 đ<span class="cost-note">Khách sạn 4–5 sao, resort</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Ăn uống</th>
+                <td>150.000 – 200.000 đ<span class="cost-note">Quán bình dân, ẩm thực đường phố</span></td>
+                <td>300.000 – 450.000 đ<span class="cost-note">Quán đặc sản địa phương, cà phê</span></td>
+                <td>600.000 – 1.000.000 đ<span class="cost-note">Nhà hàng, trải nghiệm ẩm thực</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Di chuyển nội địa</th>
+                <td>100.000 – 150.000 đ<span class="cost-note">Xe buýt, thuê xe máy chia chi phí</span></td>
+                <td>200.000 – 350.000 đ<span class="cost-note">Xe công nghệ, xe khách tuyến gần</span></td>
+                <td>500.000 – 900.000 đ<span class="cost-note">Taxi riêng, limousine cao cấp</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Tham quan &amp; Phát sinh</th>
+                <td>100.000 – 150.000 đ<span class="cost-note">Vé di tích cơ bản, nước uống</span></td>
+                <td>250.000 – 400.000 đ<span class="cost-note">Vé khu du lịch, tour ghép nửa ngày</span></td>
+                <td>400.000 – 800.000 đ<span class="cost-note">Tour riêng, quà lưu niệm</span></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Tổng ước tính / ngày</th>
+                <td><strong>500.000 – 750.000 đ</strong></td>
+                <td><strong>1.200.000 – 2.000.000 đ</strong></td>
+                <td><strong>3.000.000 – 5.700.000 đ</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="tips-callout-grid">
+          <article class="callout-box">
+            <h3>Mẹo kiểm soát ngân sách</h3>
+            <ul>
+              <li>Đặt vé máy bay và phòng lưu trú trước 3–6 tuần nếu đi dịp lễ, Tết hoặc mùa hè.</li>
+              <li>Hỏi rõ giá trước khi sử dụng dịch vụ không niêm yết (chợ đêm, xe ôm truyền thống, thuê thuyền tự do).</li>
+              <li>Ưu tiên chọn combo vé tham quan hoặc di chuyển nhóm 3–4 người để chia đều chi phí xe.</li>
+            </ul>
+          </article>
+          <article class="callout-box">
+            <h3>Lưu ý thanh toán tại Việt Nam</h3>
+            <ul>
+              <li>Chuyển khoản VietQR phổ biến ở hầu hết thành phố lớn, kể cả quán ăn nhỏ và cửa hàng tiện lợi.</li>
+              <li>Luôn mang theo 300.000 – 500.000 đ tiền mặt mệnh giá nhỏ (10k–50k) khi đi vùng núi, đảo hoặc chợ địa phương.</li>
+              <li>Kiểm tra kỹ số 0 trên tờ tiền (ví dụ 20.000 đ và 500.000 đ có tông màu xanh khá gần nhau).</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MỤC 3: DI CHUYỂN -->
+    <section id="di-chuyen" class="tips-section">
+      <div class="page-width">
+        <div class="section-head">
+          <h2>3. Kinh nghiệm di chuyển</h2>
+          <p class="section-desc">
+            Chọn đúng phương tiện giúp tiết kiệm thời gian và phù hợp với địa hình từng vùng từ đồng bằng, ven biển đến miền núi.
+          </p>
+        </div>
+
+        <figure class="tips-media-frame tips-banner-media">
+          <img
+            src="assets/images/tips/tips-transport.png"
+            alt="Đoàn tàu hỏa Bắc Nam uốn lượn men theo cung đường ven biển đèo Hải Vân giữa núi xanh và biển ngọc"
+            loading="lazy"
+          >
+          <figcaption>Cung đường sắt ven biển qua đèo Hải Vân — một trong những hành trình ngắm cảnh ấn tượng nhất Việt Nam.</figcaption>
+        </figure>
+
+        <div class="transport-grid">
+          <article class="transport-card">
+            <span class="transport-tag">Liên tỉnh đường dài</span>
+            <h3>Máy bay nội địa</h3>
+            <p>Phù hợp chặng xa như TP.HCM – Hà Nội, Đà Nẵng, Phú Quốc giúp rút ngắn thời gian còn 1–2 giờ.</p>
+            <ul class="transport-meta">
+              <li>Có mặt tại sân bay trước giờ bay ít nhất 90 phút.</li>
+              <li>Kiểm tra kỹ giới hạn hành lý xách tay (thường 7 kg) để tránh phí phát sinh tại cổng.</li>
+            </ul>
+          </article>
+
+          <article class="transport-card">
+            <span class="transport-tag">Ngắm cảnh xuyên Việt</span>
+            <h3>Tàu hỏa Bắc – Nam</h3>
+            <p>Lựa chọn êm ái, an toàn, nổi bật với cung đường đèo Hải Vân giữa Huế và Đà Nẵng.</p>
+            <ul class="transport-meta">
+              <li>Chặng qua đêm nên chọn khoang giường nằm mềm điều hòa để đảm bảo sức khỏe.</li>
+              <li>Đặt vé trực tiếp qua website Đường sắt Việt Nam (dsvn.vn) để chọn đúng vị trí ghế.</li>
+            </ul>
+          </article>
+
+          <article class="transport-card">
+            <span class="transport-tag">Linh hoạt khung giờ</span>
+            <h3>Xe khách &amp; Limousine</h3>
+            <p>Phủ rộng đến hầu hết tỉnh thành và điểm du lịch như Đà Lạt, Sa Pa, Hà Giang, Vũng Tàu.</p>
+            <ul class="transport-meta">
+              <li>Chọn nhà xe uy tín có niêm yết giá rõ ràng và điểm đón trả cố định.</li>
+              <li>Chuẩn bị áo khoác nhẹ, thuốc say xe khi đi tuyến đèo dốc vào ban đêm.</li>
+            </ul>
+          </article>
+
+          <article class="transport-card">
+            <span class="transport-tag">Chủ động khám phá</span>
+            <h3>Thuê xe máy địa phương</h3>
+            <p>Thích hợp để đi sâu vào các cung đường biển, cao nguyên hoặc điểm check-in xa trung tâm.</p>
+            <ul class="transport-meta">
+              <li>Kiểm tra phanh, đèn, lốp, gương và chụp ảnh tình trạng xe trước khi nhận.</li>
+              <li>Luôn đội mũ bảo hiểm đạt chuẩn, mang bằng lái hợp lệ và đổ đầy xăng trước khi lên đèo.</li>
+            </ul>
+          </article>
+
+          <article class="transport-card">
+            <span class="transport-tag">Trong nội đô</span>
+            <h3>Ứng dụng gọi xe &amp; Xe buýt</h3>
+            <p>Tiện lợi, biết trước giá cước tại Hà Nội, Đà Nẵng, TP.HCM và nhiều thành phố du lịch lớn.</p>
+            <ul class="transport-meta">
+              <li>Đối chiếu đúng biển số xe trên ứng dụng trước khi lên xe.</li>
+              <li>Tránh giờ cao điểm (7:00–8:30 và 17:00–19:00) nếu cần di chuyển gấp ra sân bay hoặc bến xe.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MỤC 4: FAQ -->
+    <section id="faq" class="tips-section tips-section-alt">
+      <div class="page-width">
+        <div class="section-head">
+          <h2>4. Câu hỏi thường gặp (FAQ)</h2>
+          <p class="section-desc">
+            Những thắc mắc phổ biến nhất về thời tiết, kết nối mạng, an toàn và thủ tục trước khi đi du lịch Việt Nam.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Nên đi du lịch Việt Nam vào mùa nào đẹp nhất?</summary>
+            <div class="faq-answer">
+              <p>
+                Việt Nam có khí hậu phân hóa rõ theo 3 miền nên hầu như tháng nào cũng có điểm đến đẹp. Miền Bắc lý tưởng nhất vào mùa thu (tháng 9–11) và mùa xuân (tháng 3–4); miền Trung khô ráo, biển đẹp từ tháng 2 đến tháng 8; miền Nam thuận tiện nhất vào mùa khô (tháng 12 đến tháng 4 năm sau).
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Kết nối mạng 4G và Wi-Fi khi đi du lịch có thuận tiện không?</summary>
+            <div class="faq-answer">
+              <p>
+                Hầu hết quán cà phê, khách sạn, nhà hàng đều có Wi-Fi miễn phí. Tuy nhiên, bạn vẫn nên đăng ký gói cước 4G/5G theo ngày hoặc tuần (Viettel, Vinaphone, MobiFone) để tra bản đồ, gọi xe và thanh toán thuận tiện, đặc biệt là Viettel có vùng phủ sóng ổn định tại vùng núi và hải đảo.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Đi du lịch tự túc hoặc đi một mình ở Việt Nam có an toàn không?</summary>
+            <div class="faq-answer">
+              <p>
+                Việt Nam nhìn chung rất thân thiện và an toàn với du khách tự túc. Dù vậy, bạn nên giữ đồ cá nhân gọn trước ngực ở khu vực đông người, không đi vào đoạn đường vắng khuya một mình và chia sẻ lịch trình lưu trú với người thân.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Nên mang bao nhiêu tiền mặt và thanh toán bằng cách nào tiện nhất?</summary>
+            <div class="faq-answer">
+              <p>
+                Bạn có thể thanh toán qua VietQR hoặc thẻ tại đa số cửa hàng ở đô thị. Chỉ cần mang lượng tiền mặt đủ dùng cho 1–2 ngày (khoảng 500.000 – 1.000.000 đ, kèm tiền lẻ) để trả phí gửi xe, mua đồ ở chợ truyền thống hoặc phòng trường hợp mất sóng mạng.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Khi vào đền, chùa hoặc di tích lịch sử cần lưu ý trang phục gì?</summary>
+            <div class="faq-answer">
+              <p>
+                Nên mặc trang phục kín đáo, lịch sự (áo có tay, quần hoặc váy dài qua đầu gối), giữ trật tự và tuân thủ biển báo khu vực không chụp ảnh. Một chiếc khăn choàng mỏng trong balo rất hữu ích nếu bạn cần che vai đột xuất.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Gặp sự cố khẩn cấp trong chuyến đi thì liên hệ số nào?</summary>
+            <div class="faq-answer">
+              <p>
+                Hãy lưu sẵn các đầu số khẩn cấp toàn quốc tại Việt Nam: <strong>113</strong> (Cảnh sát phản ứng nhanh), <strong>114</strong> (Cứu hỏa &amp; Cứu nạn), <strong>115</strong> (Cấp cứu y tế) cùng số lễ tân khách sạn nơi bạn đang lưu trú.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <a class="wordmark" href="index.html">VietNamExplore</a>
+      <div class="footer-meta">
+        <p>Đồ án W07 — Version Control with Git &amp; GitHub · Nhóm VietNamExplore</p>
+        <ul class="footer-links">
+          <li><a href="destinations.html">Địa điểm</a></li>
+          <li><a href="food.html">Ẩm thực</a></li>
+          <li><a href="culture.html">Văn hóa</a></li>
+          <li><a href="tips.html">Kinh nghiệm</a></li>
+          <li><a href="about.html">Giới thiệu nhóm</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
